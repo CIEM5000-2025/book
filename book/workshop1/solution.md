@@ -1,3 +1,3 @@
-# Solution
+# Preview solution
 
 These pages show a preview of the solution. 
