@@ -13,6 +13,11 @@ kernelspec:
 
 # `node.py`
 
+```{custom_download_link} node.py
+:text: "py"
+:replace_default: "False"
+```
+
 ```{code-cell} ipython3
 import numpy as np
 ```

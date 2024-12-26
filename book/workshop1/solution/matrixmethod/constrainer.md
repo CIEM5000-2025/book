@@ -13,6 +13,11 @@ kernelspec:
 
 # `constrainer.py`
 
+```{custom_download_link} constrainer.py
+:text: "py"
+:replace_default: "False"
+```
+
 ```{code-cell} ipython3
 import numpy as np
 ```

@@ -13,6 +13,11 @@ kernelspec:
 
 # `elements.py`
 
+```{custom_download_link} elements.py
+:text: "py"
+:replace_default: "False"
+```
+
 ```{code-cell} ipython3
 import numpy as np
 import matplotlib.pyplot as plt

@@ -12,6 +12,11 @@ kernelspec:
 ---
 # `__init__.py`
 
+```{custom_download_link} __init__.py
+:text: "py"
+:replace_default: "False"
+```
+
 ```{code-cell} ipython3
 from .node import *
 from .elements import *
