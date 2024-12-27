@@ -189,6 +189,42 @@ class Element:
 
         return np.matmul(np.matmul(self.Tt, k), self.T)
 
+```
+
++++
+
+(exercise2_1_2_py)=
+```{solution-start} exercise2.1
+:class: dropdown
+```
+
+```{code-cell} ipython3
+
+        # Extension contribution
+
+        k[0, 0] = k[3, 3] = EA / L
+        k[3, 0] = k[0, 3] = -EA / L
+
+        # Bending contribution
+
+        k[1, 1] = k[4, 4] = 12.0 * EI / L / L / L
+        k[1, 4] = k[4, 1] = -12.0 * EI / L / L / L
+        k[1, 2] = k[2, 1] = k[1, 5] = k[5, 1] = -6.0 * EI / L / L
+        k[2, 4] = k[4, 2] = k[4, 5] = k[5, 4] = 6.0 * EI / L / L
+        k[2, 2] = k[5, 5] = 4.0 * EI / L
+        k[2, 5] = k[5, 2] = 2.0 * EI / L
+
+        return np.matmul(np.matmul(self.Tt, k), self.T)
+
+```
+
+```{solution-end}
+```
+
++++
+        
+```{code-cell} ipython3
+
     def add_distributed_load(self, q):
         """
         Adds a distributed load to the element.
