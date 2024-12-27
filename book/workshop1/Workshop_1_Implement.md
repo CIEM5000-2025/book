@@ -609,6 +609,7 @@ mm.Element.clear()
 ```
 
 ```{exercise-start} 5.1
+:label: exercise5.1
 :nonumber: true
 
 Create nodes
@@ -622,6 +623,7 @@ Create nodes
 ```
 
 ```{exercise-start} 5.2
+:label: exercise5.2
 :nonumber: true
 
 Create element
@@ -635,6 +637,7 @@ Create element
 ```
 
 ```{exercise-start} 5.3
+:label: exercise5.3
 :nonumber: true
 
 Set boundary conditions
@@ -648,6 +651,7 @@ Set boundary conditions
 ```
 
 ```{exercise-start} 5.4
+:label: exercise5.4
 :nonumber: true
 
 Assemble the system of equations.
@@ -661,6 +665,7 @@ Assemble the system of equations.
 ```
 
 ```{exercise-start} 5.5
+:label: exercise5.5
 :nonumber: true
 
 Constrain the problem and solve for nodal displacements
@@ -674,6 +679,7 @@ Constrain the problem and solve for nodal displacements
 ```
 
 ```{exercise-start} 5.6
+:label: exercise5.6
 :nonumber: true
 
 Check with the analytical solution
