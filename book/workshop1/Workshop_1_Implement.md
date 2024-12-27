@@ -137,10 +137,10 @@ However, the implementation is incomplete:
 Add the missing pieces to the code in `./matrixmethod/elements.py`, before you perform the checks below. Do you specify your stiffness matrix in the global or local coordinate system?
 ```
 
+(exercise2_1_text_name)=
 ````{solution} exercise2.1
 :label: exercise2.1_text
 :class: dropdown
-:name: exercise2_1_text_name
 
 The stiffness matrix is specified in the local coordinate system.
 
