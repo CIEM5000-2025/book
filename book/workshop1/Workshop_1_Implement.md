@@ -149,7 +149,7 @@ Add the missing pieces to the code in `./matrixmethod/elements.py`, before you p
 ````{solution} exercise2.1
 :class: dropdown
 
-The stiffness matrix is specified in the local coordinate system.
+The stiffness matrix is specified in the global coordinate system.
 
 For the code implementations see `./matrixmethod/elements.py`:
 - [`__init__`](exercise2_1_py)
@@ -235,8 +235,32 @@ Now, create a vertical element with length $2$ and $EI=4$ and print the transfor
 Do the matrices match with what you'd expect?
 ```
 
+```{solution-start} exercise2.3
+:class: dropdown
+```
+
 ```{code-cell} ipython3
-#YOUR CODE HERE
+mm.Node.clear()
+mm.Element.clear()
+
+node1 = mm.Node(0,0)
+node2 = mm.Node(0,1)
+elem = mm.Element ( node1, node2 )
+
+section = {}
+section['EI'] = 1
+
+elem.set_section (section)
+
+print(elem)
+print(elem.T)
+print(elem.stiffness())
+```
+
+- The transformation matrix is identity which should be because the local coordinate system is aligned with the global coordinate system
+- The values of the stiffness matrix are manually checked with the stiffness matrix from the slides and are correct.
+
+```{solution-end}
 ```
 
 ```{exercise-end}
