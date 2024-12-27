@@ -491,6 +491,20 @@ Create two nodes here. You can store them on a `list` or simply create them as t
 ```{exercise-end}
 ```
 
+```{solution-start} exercise4.1
+:class: dropdown
+```
+
+```{code-cell} ipython3
+L  = 1
+
+node1 = mm.Node (0,0)
+node2 = mm.Node (L,0)
+```
+
+```{solution-end}
+```
+
 ```{exercise-start} 4.2
 :nonumber: true
 
@@ -502,6 +516,24 @@ Here we only have a single element, so there is no need to store it in a `list` 
 ```
 
 ```{exercise-end}
+```
+
+```{solution-start} exercise4.2
+:class: dropdown
+```
+
+```{code-cell} ipython3
+elem = mm.Element ( node1, node2 )
+
+EA = 1000
+section = {}
+section['EA'] = EA
+
+elem.set_section (section)
+print(elem)
+```
+
+```{solution-end}
 ```
 
 ```{exercise-start} 4.3
