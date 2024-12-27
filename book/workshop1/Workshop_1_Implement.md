@@ -195,6 +195,37 @@ print(elem.stiffness())
 ```{exercise-end}
 ```
 
+```{solution-start} exercise2.2
+:class: dropdown
+```
+
+```{code-cell} ipython3
+mm.Node.clear()
+mm.Element.clear()
+```
+
+```{code-cell} ipython3
+node1 = mm.Node(0,0)
+node2 = mm.Node(2,0)
+
+elem = mm.Element ( node1, node2 )
+
+section = {}
+section['EI'] = 4
+
+elem.set_section (section)
+
+print(elem)
+print(elem.T)
+print(elem.stiffness())
+```
+
+- The transformation matrix is identity which should be because the local coordinate system is aligned with the global coordinate system
+- The values of the stiffness matrix are manually checked with the stiffness matrix from the slides and are correct.
+
+```{solution-end}
+```
+
 ```{exercise-start} Task 2.3
 :label: exercise2.3
 :nonumber: true
