@@ -116,8 +116,8 @@ class Element:
 
 +++
 
+(exercise2_1_py)=
 ```{solution-start} exercise2.1
-:label: exercise2_1_py
 :class: dropdown
 ```
 

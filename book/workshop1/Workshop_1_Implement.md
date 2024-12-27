@@ -139,12 +139,11 @@ Add the missing pieces to the code in `./matrixmethod/elements.py`, before you p
 
 (exercise2_1_text_name)=
 ````{solution} exercise2.1
-:label: exercise2.1_text
 :class: dropdown
 
 The stiffness matrix is specified in the local coordinate system.
 
-For the code implementations, see {ref}`exercise2_1_py`, or [test]`exercise2_1_py`, [test_2]`exercise2_1_py` or [](./matrixmethod/elements.md)
+For the code implementations see [`elements.py`](exercise2_1_py).
 ````
 
 +++
@@ -161,7 +160,6 @@ Whenever you make changes to your code in the `./matrixmethod/` folder, you need
 >First, let's check the stiffness matrix for a beam which doesn't require rotation. Create a horizontal element with length $2$ and $EI=4$ and print both the transformation matrix and the stiffness matrix.
 >
 > Do the matrices match with what you'd expect?
-> test reference to [reference to dropdown](exercise2_1_text_name)
 
 ```{code-cell} ipython3
 mm.Node.clear()
