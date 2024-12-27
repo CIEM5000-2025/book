@@ -112,6 +112,32 @@ class Constrainer:
         Ff # YOUR CODE HERE
 
         return Kff, Ff
+```
+
++++
+
+(exercise3_1_py)=
+```{solution-start} exercise3.1
+:class: dropdown
+```
+
+```{code-cell} ipython3
+
+        self.free_dofs = [i for i in range(len(f)) if i not in self.cons_dofs]
+        
+        Kff = k[np.ix_(self.free_dofs,self.free_dofs)]
+        Ff = f[self.free_dofs]
+
+        return Kff, Ff
+
+```
+
+```{solution-end}
+```
+
++++
+        
+```{code-cell} ipython3
 
     def support_reactions (self,k,u_free,f):       
         """

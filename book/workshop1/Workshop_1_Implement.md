@@ -398,6 +398,12 @@ However, the implementation is incomplete:
 Add the missing pieces to the code, before you perform the check below
 ```
 
+````{solution} exercise3.1
+:class: dropdown
+
+For the code implementations see `./matrixmethod/constrainer.py`: [`constrain`](exercise3_1_py)
+````
+
 ```{exercise-start} 3.2
 :label: exercise3.2
 :nonumber: true
@@ -418,6 +424,36 @@ print(np.shape(np.linalg.inv(Kff)))
 ```
 
 ```{exercise-end}
+```
+
+```{solution-start} exercise3.2
+:class: dropdown
+```
+
+```{code-cell} ipython3
+section = {}
+section['EI'] = 1
+elem.set_section (section)
+
+k = elem.stiffness()
+#print(np.linalg.inv(k))
+
+con = mm.Constrainer()
+
+con.fix_node (node1)
+
+print(con)
+
+f = np.zeros (6) #empty load vector
+Kff, Fff = con.constrain( k, f )
+print(np.shape(np.linalg.inv(Kff)))
+```
+
+- The inverted matrix of the original $\mathbf{K}$ gives a singular matrix, which is correct as the structure can perform any rigid body translation / rotation.
+- The constrained matrix reduces $\mathbf{K}$ to only the free terms, which is not singular any more.
+- The dimensions should match the number of free dofs, which is correct.
+
+```{solution-end}
 ```
 
 ## 4. Full implementation extension bar
