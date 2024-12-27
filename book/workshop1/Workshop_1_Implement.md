@@ -161,7 +161,7 @@ Whenever you make changes to your code in the `./matrixmethod/` folder, you need
 >First, let's check the stiffness matrix for a beam which doesn't require rotation. Create a horizontal element with length $2$ and $EI=4$ and print both the transformation matrix and the stiffness matrix.
 >
 > Do the matrices match with what you'd expect?
-> test reference to {ref}`exercise2_1_text_name`
+> test reference to [reference to dropdown](exercise2_1_text_name)
 
 ```{code-cell} ipython3
 mm.Node.clear()
