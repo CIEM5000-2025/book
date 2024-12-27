@@ -27,6 +27,12 @@ Our matrix method implementation is now completely stored in a local package, co
 :text: ".ipynb"
 :replace_default: "True"
 ```
+
+```{custom_download_link} ./Workshop_1_Implement.md
+:text: ".md:myst"
+:replace_default: "False"
+```
+
 ```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments
 :text: "All files practice assignments"
 :replace_default: "False"
@@ -57,6 +63,7 @@ The purpose of this class is to store node information and keep track of the tot
 
 ```{exercise-start} Task 1.1
 :label: exercise1.1
+:nonumber: true
 To test whether you understand how the class works, create two nodes on coordinates ($0$,$0$) and ($3$,$4$) and print the string representation of both nodes. The `clear` function is called to restart the node and DOF counters. Make sure this is done whenever you start solving a new problem.
 ```
 
@@ -133,6 +140,7 @@ However, the implementation is incomplete:
 
 ```{exercise} Task 2.1
 :label: exercise2.1
+:nonumber: true
 
 Add the missing pieces to the code in `./matrixmethod/elements.py`, before you perform the checks below. Do you specify your stiffness matrix in the global or local coordinate system?
 ```
@@ -157,11 +165,14 @@ Whenever you make changes to your code in the `./matrixmethod/` folder, you need
 %autoreload 2
 ```
 
-> ### Task 2.2
-> 
->First, let's check the stiffness matrix for a beam which doesn't require rotation. Create a horizontal element with length $2$ and $EI=4$ and print both the transformation matrix and the stiffness matrix.
->
-> Do the matrices match with what you'd expect?
+```{exercise-start} Task 2.2
+:label: exercise2.2
+:nonumber: true
+
+First, let's check the stiffness matrix for a beam which doesn't require rotation. Create a horizontal element with length $2$ and $EI=4$ and print both the transformation matrix and the stiffness matrix.
+
+Do the matrices match with what you'd expect?
+```
 
 ```{code-cell} ipython3
 mm.Node.clear()
@@ -181,43 +192,71 @@ print(elem.T)
 print(elem.stiffness())
 ```
 
-> ### Task 2.3
-> Now, create a vertical element with length $2$ and $EI=4$ and print the transformation and stiffness matrix.
-> 
-> Do the matrices match with what you'd expect?
+```{exercise-end}
+```
+
+```{exercise-start} Task 2.3
+:label: exercise2.3
+:nonumber: true
+
+Now, create a vertical element with length $2$ and $EI=4$ and print the transformation and stiffness matrix.
+
+Do the matrices match with what you'd expect?
+```
 
 ```{code-cell} ipython3
 #YOUR CODE HERE
 ```
 
-> ### Task 2.4
->
->Now, create an element rotated in $120 \degree$ with length $2$ and print the transformation matrix.
->
->Does it match with what you'd expect?
+```{exercise-end}
+```
+
+```{exercise-start} Task 2.4
+:label: exercise2.4
+:nonumber: true
+
+Now, create an element rotated in $120 ^{\circ}$ with length $2$ and print the transformation matrix.
+
+Do the matrices match with what you'd expect?
+```
 
 ```{code-cell} ipython3
 #YOUR CODE HERE
 ```
 
-> ### Task 2.5
->
->Now, create an element rotated in $60 \degree$ with length $2$ and print the transformation matrix.
->
->Does it match with what you'd expect?
+```{exercise-end}
+```
+
+```{exercise-start} Task 2.5
+:label: exercise2.5
+:nonumber: true
+
+Now, create an element rotated in $60 ^{\circ}$ with length $2$ and print the transformation matrix.
+
+Do the matrices match with what you'd expect?
+```
 
 ```{code-cell} ipython3
 #YOUR CODE HERE
 ```
 
-> ### Task 2.6
-> 
-> We're going to apply the transformation matrix to the vector $[0,0,0,\sqrt{3},1,0]$ defined in global coordinates. What would be vector in the local coordinate system of the previous element?
->
-> Check your answer using pen and paper. Tip: make a drawing instead of doing all the algebra.
+```{exercise-end}
+```
+
+```{exercise-start} Task 2.6
+:label: exercise2.6
+:nonumber: true
+
+We're going to apply the transformation matrix to the vector $[0,0,0,\sqrt{3},1,0]$ defined in global coordinates. What would be vector in the local coordinate system of the previous element?
+
+Check your answer using pen and paper. Tip: make a drawing instead of doing all the algebra.
+```
 
 ```{code-cell} ipython3
 print(np.matmul(elem.T,np.array([0,0,0,np.sqrt(3),1,0])))
+```
+
+```{exercise-end}
 ```
 
 ## 3. The Constrainer class
