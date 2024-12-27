@@ -482,6 +482,7 @@ mm.Element.clear()
 
 ```{exercise-start} 4.1
 :nonumber: true
+:label: exercise4.1
 
 Create two nodes here. You can store them on a `list` or simply create them as two separate objects (*e.g.* `node1` and `node2`).
 ```
@@ -509,6 +510,7 @@ node2 = mm.Node (L,0)
 
 ```{exercise-start} 4.2
 :nonumber: true
+:label: exercise4.2
 
 Here we only have a single element, so there is no need to store it in a `list` yet. You are also going to need a `dict` defining the cross-section of the element.
 ```
@@ -540,6 +542,7 @@ print(elem)
 
 ```{exercise-start} 4.3
 :nonumber: true
+:label: exercise4.3
 
 Let's define the boundary conditions. We create an instance of the `Constrainer` class to deal with prescribed displacements. Take a look at its functions and inform if Node 1 is fully fixed.
 
@@ -574,6 +577,7 @@ print(con)
 
 ```{exercise-start} 4.4
 :nonumber: true
+:label: exercise4.4
 
 Now assemble the global stiffness matrix and force vector. Since we only have one element, there is no real assembly to be performed other than getting the stiffness matrix of the single element and storing the load at Node 2 in the correct positions of $\mathbf{f}$.
 ```
@@ -601,6 +605,7 @@ global_f[3:6] = node2.p
 
 ```{exercise-start} 4.5
 :nonumber: true
+:label: exercise4.5
 
 Constrain the problem and solve for nodal displacements.
 ```
@@ -627,6 +632,7 @@ print(u)
 
 ```{exercise-start} 4.6
 :nonumber: true
+:label: exercise4.6
 
 Finally, compare the displacement at the end of the bar with the one coming from the ODE solution. Note that since our element is already suitable for frames combining extension and bending, $\mathbf{u}$ has three entries. Which one is the entry that matters to us here? Did your solutions match? If so, that is a sign your implementation is correct. Can you use the function `full_disp` to obtain a vector of all displacements?
 ```
