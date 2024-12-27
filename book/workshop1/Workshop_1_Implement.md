@@ -6,7 +6,7 @@ jupytext:
     format_version: 0.13
     jupytext_version: 1.16.2
 kernelspec:
-  display_name: Python 3 (ipykernel)
+  display_name: base
   language: python
   name: python3
 ---
@@ -85,6 +85,24 @@ This node has:
  - load vector=[0. 0. 0.]
 ```
 ::::::
+
++++
+
+```{solution-start} exercise1.1
+:class: dropdown
+```
+
+```{code-cell} ipython3
+mm.Node.clear()
+
+node1 = mm.Node(0,0)
+node2 = mm.Node(3,4)
+print(node1)
+print(node2)
+```
+
+```{solution-end}
+```
 
 +++
 
