@@ -17,6 +17,11 @@ kernelspec:
 :replace_default: "False"
 ```
 
+```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_workshop_1
+:text: "All files practice assignments"
+:replace_default: "False"
+```
+
 ```{code-cell} ipython3
 from .node import *
 from .elements import *
