@@ -235,6 +235,13 @@ Now, create a vertical element with length $2$ and $EI=4$ and print the transfor
 Do the matrices match with what you'd expect?
 ```
 
+```{code-cell} ipython3
+#YOUR CODE HERE
+```
+
+```{exercise-end}
+```
+
 ```{solution-start} exercise2.3
 :class: dropdown
 ```
@@ -261,9 +268,6 @@ print(elem.stiffness())
 - The values of the stiffness matrix are manually checked with the stiffness matrix from the slides and are correct.
 
 ```{solution-end}
-```
-
-```{exercise-end}
 ```
 
 ```{exercise-start} Task 2.4
