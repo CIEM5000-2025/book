@@ -264,8 +264,9 @@ print(elem.T)
 print(elem.stiffness())
 ```
 
-- The transformation matrix is identity which should be because the local coordinate system is aligned with the global coordinate system
-- The values of the stiffness matrix are manually checked with the stiffness matrix from the slides and are correct.
+- The transformation matrix moves the extension terms to the column corresponding to the vertical displacements, which is correct.
+- The transformation matrix moves the deflection terms to the column corresponding to the horizontal displacements, which is correct.
+- The rotation terms are untouched, which is correct
 
 ```{solution-end}
 ```
