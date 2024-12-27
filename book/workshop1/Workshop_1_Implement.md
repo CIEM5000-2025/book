@@ -135,6 +135,17 @@ However, the implementation is incomplete:
 Add the missing pieces to the code in `./matrixmethod/elements.py`, before you perform the checks below. Do you specify your stiffness matrix in the global or local coordinate system?
 ```
 
+````{solution} exercise2.1
+:label: exercise2.1_text
+:class: dropdown
+
+The stiffness matrix is specified in the local coordinate system.
+
+For the code implementations, see {ref}`exercise2.1_py`
+
+```
+````
+
 +++
 
 Whenever you make changes to your code in the `./matrixmethod/` folder, you need to reimport those. Instead of restarting the kernel, we use some magic ipython commands. Run the cell below once. Consequently, whenever you save your changes in one of the `.py`-files, it's automatically reloaded.

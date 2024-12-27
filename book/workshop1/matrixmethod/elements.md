@@ -112,6 +112,34 @@ class Element:
         self.local_element_load = np.array([0,0,0,0,0,0])
         
         Element.ne += 1
+```
+
++++
+
+```{solution-start} exercise2.1
+:label: exercise2.1_py
+:class: dropdown
+```
+
+```{code-cell} ipython3
+
+        alpha = np.arctan2( - (self.nodes[1].z - self.nodes[0].z) , (self.nodes[1].x - self.nodes[0].x))
+
+        T = np.zeros((6, 6))
+
+        T[0, 0] = T[1, 1] = T[3, 3] = T[4, 4] = np.cos(alpha)
+        T[0, 1] = T[3, 4] = -np.sin(alpha)
+        T[1, 0] = T[4, 3] = np.sin(alpha)
+        T[2, 2] = T[5, 5] = 1
+
+```
+
+```{solution-end}
+```
+
++++
+        
+```{code-cell} ipython3
 
     def set_section(self, props):
         """
