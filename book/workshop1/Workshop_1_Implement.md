@@ -690,6 +690,19 @@ Create nodes
 ```{exercise-end}
 ```
 
+```{solution-start} exercise5.1
+:class: dropdown
+```
+
+```{code-cell} ipython3
+L  = 1
+node1 = mm.Node (0,0)
+node2 = mm.Node (L,0)
+```
+
+```{solution-end}
+```
+
 ```{exercise-start} 5.2
 :label: exercise5.2
 :nonumber: true
@@ -702,6 +715,24 @@ Create element
 ```
 
 ```{exercise-end}
+```
+
+```{solution-start} exercise5.2
+:class: dropdown
+```
+
+```{code-cell} ipython3
+elem = mm.Element ( node1, node2 )
+
+EI = 1000
+section = {}
+section['EI'] = EI
+
+elem.set_section (section)
+print(elem)
+```
+
+```{solution-end}
 ```
 
 ```{exercise-start} 5.3
@@ -718,6 +749,22 @@ Set boundary conditions
 ```{exercise-end}
 ```
 
+```{solution-start} exercise5.3
+:class: dropdown
+```
+
+```{code-cell} ipython3
+con = mm.Constrainer()
+
+con.fix_node (node1)
+F  = 100
+node2.add_load ([0,F,0])
+print(con)
+```
+
+```{solution-end}
+```
+
 ```{exercise-start} 5.4
 :label: exercise5.4
 :nonumber: true
@@ -730,6 +777,21 @@ Assemble the system of equations.
 ```
 
 ```{exercise-end}
+```
+
+```{solution-start} exercise5.4
+:class: dropdown
+```
+
+```{code-cell} ipython3
+global_k = elem.stiffness()
+global_f = np.zeros (6)
+
+global_f[0:3] = node1.p
+global_f[3:6] = node2.p
+```
+
+```{solution-end}
 ```
 
 ```{exercise-start} 5.5
@@ -746,6 +808,19 @@ Constrain the problem and solve for nodal displacements
 ```{exercise-end}
 ```
 
+```{solution-start} exercise5.5
+:class: dropdown
+```
+
+```{code-cell} ipython3
+Kff, Ff = con.constrain ( global_k, global_f )
+u = np.matmul ( np.linalg.inv(Kff), Ff )
+print(u)
+```
+
+```{solution-end}
+```
+
 ```{exercise-start} 5.6
 :label: exercise5.6
 :nonumber: true
@@ -760,4 +835,13 @@ Did your solutions match? If so, your implementation is correct!
 ```
 
 ```{exercise-end}
+```
+
+```{solution-start} exercise5.5
+:class: dropdown
+```
+
+The solution from a forget-me-not is $\cfrac{FL^3}{3EI} = \cfrac{100 \cdot 1^3}{3\cdot 1000} \approx 0.0333$ for the deflection and $\left|\cfrac{FL^2}{2EI}\right|= \left|\cfrac{100 \cdot 1^2}{2\cdot 1000}\right| = 0.05$ for the rotation which equals the solution from the matrix method.
+
+```{solution-end}
 ```
