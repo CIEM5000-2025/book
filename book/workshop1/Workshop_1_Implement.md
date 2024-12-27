@@ -662,7 +662,7 @@ con.full_disp(u)
 ```{solution-end}
 ```
 
-## 5: Full implementation bending beam
+## 5. Full implementation bending beam
 
 In the first example above we tested our model under extension. But that does not really guarantee it will behave correctly in bending. That is the goal of this second sanity check. Let's solve the following problem:
 
