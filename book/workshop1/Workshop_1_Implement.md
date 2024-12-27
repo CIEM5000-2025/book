@@ -141,9 +141,7 @@ Add the missing pieces to the code in `./matrixmethod/elements.py`, before you p
 
 The stiffness matrix is specified in the local coordinate system.
 
-For the code implementations, see {ref}`exercise2.1_py`
-
-```
+For the code implementations, see {ref}`exercise2.1_py`, or [](./matrixmethod/elements.py)
 ````
 
 +++
