@@ -275,7 +275,7 @@ print(elem.stiffness())
 :label: exercise2.4
 :nonumber: true
 
-Now, create an element rotated in $120 ^{\circ}$ with length $2$ and print the transformation matrix.
+Now, create an element rotated in $120^{\circ}$ with length $2$ and print the transformation matrix.
 
 Do the matrices match with what you'd expect?
 ```
@@ -304,8 +304,8 @@ print(elem.T)
 ```
 
 - Again, the rotation term is not transformed, which is expected.
-- A rotation of $120 ^{\circ}$ corresponds with a cosine term of $-0.5$ which is correctly calculated
-- A rotation of $120 ^{\circ}$ corresponds with a sin term of $0.5\sqrt{3}$ which is correctly calculated
+- A rotation of $120^{\circ}$ corresponds with a cosine term of $-0.5$ which is correctly calculated
+- A rotation of $120^{\circ}$ corresponds with a sin term of $0.5\sqrt{3}$ which is correctly calculated
 
 ```{solution-end}
 ```
@@ -314,7 +314,7 @@ print(elem.T)
 :label: exercise2.5
 :nonumber: true
 
-Now, create an element rotated in $60 ^{\circ}$ with length $2$ and print the transformation matrix.
+Now, create an element rotated in $60^{\circ}$ with length $2$ and print the transformation matrix.
 
 Do the matrices match with what you'd expect?
 ```
@@ -324,6 +324,29 @@ Do the matrices match with what you'd expect?
 ```
 
 ```{exercise-end}
+```
+
+```{solution-start} exercise2.5
+:class: dropdown
+```
+
+```{code-cell} ipython3
+mm.Node.clear()
+mm.Element.clear()
+
+node1 = mm.Node(0,0)
+node2 = mm.Node(1,-np.sqrt(3))
+elem = mm.Element ( node1, node2 )
+
+print(elem)
+print(elem.T)
+```
+
+- Again, the rotation term is not transformed, which is expected.
+- A rotation of $60^{\circ}$ corresponds with a cosine term of $0.5$ which is correctly calculated
+- A rotation of $60^{\circ}$ corresponds with a sin term of $0.5\sqrt{3}$ which is correctly calculated
+
+```{solution-end}
 ```
 
 ```{exercise-start} 2.6
@@ -340,6 +363,21 @@ print(np.matmul(elem.T,np.array([0,0,0,np.sqrt(3),1,0])))
 ```
 
 ```{exercise-end}
+```
+
+```{solution-start} exercise2.6
+:class: dropdown
+```
+
+```{code-cell} ipython3
+print(np.matmul(elem.T,np.array([0,0,0,np.sqrt(3),1,0])))
+```
+
+```{figure} https://raw.githubusercontent.com/ibcmrocha/public/main/sketch.png
+:align: center
+```
+
+```{solution-end}
 ```
 
 ## 3. The Constrainer class
