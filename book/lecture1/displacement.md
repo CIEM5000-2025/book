@@ -11,7 +11,9 @@ jupytext:
 
 In the previous [chapter](./recap.ipynb) you've seen how solving for integration constants because a labour-intensive process for more complicated structures. A way of circumventing that is solving for nodal displacements! You might have seen that before when solving statically indeterminate structures using the displacement method!
 
-> We'll investigate the equivalence between solving structures with the displacement method and the matrix method.
+::::::{topic} Learning objective
+We'll investigate the equivalence between solving structures with the displacement method and the matrix method.
+::::::
 
 The displacement method for statically indeterminate structures works by defining a single nodal displacement of the equivalent statically determinate structure which defines the displacement of the full structure. The nodal displacement can be solved for by equilibrium relations of the external forces and the force corresponding to the displacement. Solving this equation allows you to find the full displacement- and force distribution.
 
@@ -48,9 +50,13 @@ These relations can be rewritten as $F_1$ and $F_2$ in terms of $u_2$ so that th
 
 Using $F^{(1)} = F^{(2)}$ the displacement $u_2$ can now be solved for:
 
-$$ \cfrac{EA_1}{\ell_1} u_2 - \cfrac{\ell_1^2}{2EA_1}q = -\cfrac{EA_2}{\ell_2} u_2 - \cfrac{\ell_2^2}{2EA_2}q \\
-\left(\cfrac{EA_1}{\ell_1} + \cfrac{EA_2}{\ell_2}\right) u_2 = \cfrac{\ell_1^2}{2EA_1}q - \cfrac{\ell_2^2}{2EA_2}q \\
-u_2 = \cfrac{\cfrac{\ell_1^2}{2EA_1}q - \cfrac{\ell_2^2}{2EA_2}q }{\cfrac{EA_1}{\ell_1} + \cfrac{EA_2}{\ell_2}}$$
+$$
+\begin{align}
+\cfrac{EA_1}{\ell_1} u_2 - \cfrac{\ell_1^2}{2EA_1}q& = -\cfrac{EA_2}{\ell_2} u_2 - \cfrac{\ell_2^2}{2EA_2}q \\
+\left(\cfrac{EA_1}{\ell_1} + \cfrac{EA_2}{\ell_2}\right) u_2& = \cfrac{\ell_1^2}{2EA_1}q - \cfrac{\ell_2^2}{2EA_2}q \\
+u_2& = \cfrac{\cfrac{\ell_1^2}{2EA_1}q - \cfrac{\ell_2^2}{2EA_2}q }{\cfrac{EA_1}{\ell_1} + \cfrac{EA_2}{\ell_2}}
+\end{align}
+$$
 
 ## Equivalence with matrix method
 
