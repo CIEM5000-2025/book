@@ -136,7 +136,7 @@ print(#YOUR ELEMENT HERE
 ```{exercise-end}
 ```
 
-```{solution-start} exercise2.2
+```{solution-start} 2_exercise2.2
 :class: dropdown
 ```
 
@@ -190,6 +190,37 @@ Now solve the nodal displacements. Once you are done, compare the rotation at th
 ```{exercise-end}
 ```
 
+```{solution-start} 2_exercise2.3
+:class: dropdown
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+con = mm.Constrainer()
+
+con.fix_dof (node1,0)
+con.fix_dof (node1,1)
+con.fix_dof (node2,1)
+print(con)
+
+global_k = elem.stiffness()
+global_f = np.zeros (6)
+
+global_f[0:3] = node1.p
+global_f[3:6] = node2.p
+
+Kc, Fc = con.constrain ( global_k, global_f )
+u_free = np.matmul ( np.linalg.inv(Kc), Fc )
+print(u_free)
+```
+
+The rotations corresponds with the forget-me-not solution $\cfrac{qL^3}{24\cdot EI} = \cfrac{10 \cdot 1^3}{24\cdot 1000} \approx 0.0004166$
+
+```{solution-end}
+```
+
+
 ```{exercise-start} 2.4
 :label: 2_exercise2.4
 :nonumber: true
@@ -206,6 +237,28 @@ u_elem = con.full_disp(#YOUR CODE HERE)
 ```{exercise-end}
 ```
 
+```{solution-start} 2_exercise2.4
+:class: dropdown
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+u_elem = con.full_disp(u_free)[elem.global_dofs()] #keep this line
+moments = elem.bending_moments(u_elem,3)
+print(moments)
+elem.plot_moment_diagram(u_elem,num_points=51)
+```
+
+The rotations corresponds with the forget-me-not solution $\cfrac{qL^3}{24\cdot EI} = \cfrac{10 \cdot 1^3}{24\cdot 1000} \approx 0.0004166$
+```
+
+- The moment corresponds with the well known solution $\cfrac{1}{8}qL^2=\cfrac{1}{8}\cdot 10 \cdot 1^2 = 1.25$
+- The shape is parabolic, as expected.
+
+```{solution-end}
+```
+
 ```{exercise-start} 2.5
 :label: 2_exercise2.5
 :nonumber: true
@@ -219,6 +272,27 @@ Calculate the deflection at midspan and plot the deflected structure using `plot
 ```
 
 ```{exercise-end}
+```
+
+```{solution-start} 2_exercise2.5
+:class: dropdown
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+deflections = elem.full_displacement(u_elem,3)
+print(deflections)
+elem.plot_displaced(u_elem,num_points=51,global_c=False)
+```
+
+The rotations corresponds with the forget-me-not solution $\cfrac{qL^3}{24\cdot EI} = \cfrac{10 \cdot 1^3}{24\cdot 1000} \approx 0.0004166$
+```
+
+- The deflection corresponds with the forget-me-not solution $\cfrac{5}{384} \cfrac{qL^4}{EI}=\cfrac{5}{384} \cfrac{10 \cdot 1^4}{1000} \approx 0.0001302$
+- The shape of the deflection is a 4th order polynomial, as expected.
+
+```{solution-end}
 ```
 
 ## 3. The Constrainer class
