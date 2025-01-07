@@ -204,6 +204,30 @@ class Element:
         self.nodes[0].add_load #YOUR CODE HERE
         self.nodes[1].add_load #YOUR CODE HERE
 
+```
+
++++
+
+(2_exercise2_1_py_1)=
+```{solution-start} 2_exercise2.1
+:class: dropdown
+```
+
+```{code-cell} ipython3
+
+        self.local_element_load = [0.5 * q[0] * l, 0.5 * q[1] * l, -1.0 / 12.0 * q[1] * l * l, 0.5 * q[0] * l, 0.5 * q[1] * l, 1.0 / 12.0 * q[1] * l * l]
+
+        global_element_load = np.matmul(self.Tt, np.array(local_element_load))
+
+        self.nodes[0].add_load(global_element_load[0:3])
+        self.nodes[1].add_load(global_element_load[3:6])
+
+```
+
+```{solution-end}
+```
+
+```{code-cell} ipython3
     def bending_moments(self, u_global, num_points=2):
         """
         Calculate the bending moments along the element.
@@ -227,7 +251,34 @@ class Element:
         M #YOUR CODE HERE
         
         return M
-    
+```
+
++++
+
+(2_exercise2_1_py_2)=
+```{solution-start} 2_exercise2.1
+:class: dropdown
+```
+
+```{code-cell} ipython3
+        local_disp = np.matmul(self.T, u_global)
+
+        w_1 = local_disp[1]
+        phi_1 = local_disp[2]
+        w_2 = local_disp[4]
+        phi_2 = local_disp[5]
+
+        M = (-l ** 5.0 * q + 6.0 * l ** 4.0 * q * local_x
+             - 6.0 * q * local_x * local_x * l ** 3.0 - 48.0 * (phi_1 + phi_2 / 2.0) * EI * l ** 2.0
+             + 72.0 * EI * ((phi_1 + phi_2) * local_x + w_1 - w_2) * l - 144.0 * local_x * EI * (w_1 - w_2)) / 12.0 / l ** 3.0
+        
+        return M
+```
+
+```{solution-end}
+```
+
+```{code-cell} ipython3
     def full_displacement (self, u_global, num_points=2):
         """
         Calculates the displacement along the element.
@@ -245,7 +296,43 @@ class Element:
         w #YOUR CODE HERE
 
         return u, w
-    
+```
+
++++
+
+(2_exercise2_1_py_3)=
+```{solution-start} 2_exercise2.1
+:class: dropdown
+```
+
+```{code-cell} ipython3
+        L = self.L
+        q = self.q[1]
+        q_x = self.q[0]
+        EI= self.EI
+        EA = self.EA
+
+        x = np.linspace ( 0.0, L, num_points )
+
+        ul = np.matmul ( self.T, u_global )
+
+        u_1   = ul[0]
+        w_1   = ul[1]
+        phi_1 = ul[2]
+        u_2   = ul[3]
+        w_2   = ul[4]
+        phi_2 = ul[5]
+
+        u = q_x*(-L*x/(2*EA) + x**2/(2*EA)) + u_1*(1 - x/L) + u_2*x/L
+        w = phi_1*(-x + 2*x**2/L - x**3/L**2) + phi_2*(x**2/L - x**3/L**2) + q*(L**2*x**2/(24*EI) - L*x**3/(12*EI) + x**4/(24*EI)) + w_1*(1 - 3*x**2/L**2 + 2*x**3/L**3) + w_2*(3*x**2/L**2 - 2*x**3/L**3)
+        
+        return u, w
+```
+
+```{solution-end}
+```
+
+```{code-cell} ipython3
     def plot_moment_diagram (self, u_elem, num_points=10, global_c=False, scale=1.0):
         """
         Plots the bending moment diagram of the element.

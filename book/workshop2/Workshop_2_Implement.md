@@ -97,6 +97,17 @@ The implementation is incomplete:
 Add the missing pieces to the code, before you perform the checks below.
 ```
 
+````{solution} exercise2.1
+:class: dropdown
+
+The stiffness matrix is specified in the global coordinate system.
+
+For the code implementations see `./matrixmethod/elements.py`:
+- [`add_distributed_load`](2_exercise2_1_py_1)
+- [`bending_moments`](2_exercise2_1_py_2)
+- [`full_displacement`](2_exercise2_1_py_3)
+````
+
 +++
 
 Having made your implementations, it is now time to verify the first addition of your code with a simple sanity check. We would like to solve the following simply-supported beam:
