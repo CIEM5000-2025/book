@@ -171,8 +171,8 @@ nodes = []
 
 nodes.append(mm.Node(0,0))
 nodes.append(mm.Node(b,0))
-nodes.append(mm.Node(b,h))
-nodes.append(mm.Node(0,h))
+nodes.append(mm.Node(b,-h))
+nodes.append(mm.Node(0,-h))
 
 elems = []
 
