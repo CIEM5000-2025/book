@@ -23,8 +23,8 @@ kernelspec:
 :replace_default: "False"
 ```
 
-```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_workshop_1
-:text: "All files practice assignments solutions workshop 1"
+```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_workshop_2
+:text: "All files practice assignments solutions workshop 2"
 :replace_default: "False"
 ```
 
