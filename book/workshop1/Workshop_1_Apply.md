@@ -15,8 +15,6 @@ kernelspec:
 
 ::::::{attention} Attention
 This page shows a preview of the assignment. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2025/practice-assignments)
-
-After the workshop, the solution will be added to this preview and to the [GitHub-repository](https://github.com/CIEM5000-2025/practice-assignments)
 ::::::
 
 In this notebook you will work on a homework assignment involving a Vierendeel frame.
