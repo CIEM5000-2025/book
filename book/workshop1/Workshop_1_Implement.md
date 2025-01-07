@@ -195,6 +195,8 @@ Do the matrices match with what you'd expect?
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 mm.Node.clear()
 mm.Element.clear()
 ```
@@ -508,6 +510,8 @@ With $EA = 1000$, $F = 100$ and $L = 1$.
 Use the code blocks below to set up and solve this problem using the classes above. The steps to follow are outlined below and short explanations/hints are given. Once you have a solution for the horizontal displacement of the node at the right end of the bar, compare it to the analytical solution you obtained in the first half of the course.
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 mm.Node.clear()
 mm.Element.clear()
 ```
@@ -716,6 +720,8 @@ Choose appropriate values yourself
 When setting up and solving your model, note that we are now interested in $w$ displacements, our load is now vertical and the cross-section property driving our deformation is now $EI$. Good luck!
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 mm.Node.clear()
 mm.Element.clear()
 ```
