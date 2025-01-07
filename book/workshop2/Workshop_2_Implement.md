@@ -136,6 +136,45 @@ print(#YOUR ELEMENT HERE
 ```{exercise-end}
 ```
 
+```{solution-start} exercise2.2
+:class: dropdown
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+EI = 1000
+q  = 10
+L  = 1
+
+mm.Node.clear()
+mm.Element.clear()
+
+node1 = mm.Node (0,0)
+node2 = mm.Node (L,0)
+
+elem = mm.Element ( node1, node2 )
+
+section = {}
+section['EI'] = EI
+
+elem.set_section (section)
+
+elem.add_distributed_load([0,10])
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+print(elem)
+```
+
+- The vertical forces correspond to the solution from [](../lecture2/element_loads.md) $\cfrac{1}{2}qL=\cfrac{1}{2}\cdot 10 \cdot 1=5$
+- The moments correspond to the solution from [](../lecture2/element_loads.md) $\cfrac{1}{12}qL^2=\cfrac{1}{12}\cdot 10 \cdot 1^2 \approx 0.833$
+
+```{solution-end}
+```
+
 ```{exercise-start} 2.3
 :label: 2_exercise2.3
 :nonumber: true
