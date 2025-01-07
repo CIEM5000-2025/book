@@ -139,7 +139,7 @@ And the following displacements:
 
 +++
 
-```{solution-start} exercise_ws_1
+```{solution-start} exercise_ws_2
 :class: dropdown
 ```
 
