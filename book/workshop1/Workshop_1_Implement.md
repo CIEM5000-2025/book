@@ -121,6 +121,8 @@ This node has:
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 mm.Node.clear()
 
 node1 = mm.Node(0,0)
@@ -218,11 +220,15 @@ print(elem.stiffness())
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 mm.Node.clear()
 mm.Element.clear()
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 node1 = mm.Node(0,0)
 node2 = mm.Node(2,0)
 
@@ -265,6 +271,8 @@ Do the matrices match with what you'd expect?
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 mm.Node.clear()
 mm.Element.clear()
 
@@ -310,6 +318,8 @@ Do the matrices match with what you'd expect?
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 mm.Node.clear()
 mm.Element.clear()
 
@@ -349,6 +359,8 @@ Do the matrices match with what you'd expect?
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 mm.Node.clear()
 mm.Element.clear()
 
@@ -388,6 +400,8 @@ print(np.matmul(elem.T,np.array([0,0,0,np.sqrt(3),1,0])))
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 print(np.matmul(elem.T,np.array([0,0,0,np.sqrt(3),1,0])))
 ```
 
@@ -449,6 +463,8 @@ print(np.shape(np.linalg.inv(Kff)))
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 section = {}
 section['EI'] = 1
 elem.set_section (section)
@@ -515,6 +531,8 @@ Create two nodes here. You can store them on a `list` or simply create them as t
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 L  = 1
 
 node1 = mm.Node (0,0)
@@ -543,6 +561,8 @@ Here we only have a single element, so there is no need to store it in a `list` 
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 elem = mm.Element ( node1, node2 )
 
 EA = 1000
@@ -577,6 +597,8 @@ You also need to pass the load $F$ on to Node 2. Check the member functions of `
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 con = mm.Constrainer()
 
 con.fix_node (node1)
@@ -610,6 +632,8 @@ Now assemble the global stiffness matrix and force vector. Since we only have on
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 global_k = elem.stiffness()
 global_f = np.zeros (6)
 
@@ -638,6 +662,8 @@ Constrain the problem and solve for nodal displacements.
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 Kff, Ff = con.constrain ( global_k, global_f )
 u = np.matmul ( np.linalg.inv(Kff), Ff )
 print(u)
@@ -665,6 +691,8 @@ Finally, compare the displacement at the end of the bar with the one coming from
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 con.full_disp(u)
 ```
 
@@ -711,6 +739,8 @@ Create nodes
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 L  = 1
 node1 = mm.Node (0,0)
 node2 = mm.Node (L,0)
@@ -738,6 +768,8 @@ Create element
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 elem = mm.Element ( node1, node2 )
 
 EI = 1000
@@ -770,6 +802,8 @@ Set boundary conditions
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 con = mm.Constrainer()
 
 con.fix_node (node1)
@@ -800,6 +834,8 @@ Assemble the system of equations.
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 global_k = elem.stiffness()
 global_f = np.zeros (6)
 
@@ -829,6 +865,8 @@ Constrain the problem and solve for nodal displacements
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 Kff, Ff = con.constrain ( global_k, global_f )
 u = np.matmul ( np.linalg.inv(Kff), Ff )
 print(u)

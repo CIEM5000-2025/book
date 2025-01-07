@@ -151,11 +151,15 @@ ODE_shear = #YOUR CODE HERE
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 mm.Node.clear()
 mm.Element.clear()
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 h = 1
 b = 1
 EIr = 10000
@@ -202,6 +206,8 @@ nodes[3].add_load ([H,0,0])
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 global_k = np.zeros ((3*len(nodes), 3*len(nodes)))
 global_f = np.zeros (3*len(nodes))
 
@@ -216,12 +222,16 @@ for node in nodes:
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 Kff, Ff = con.constrain ( global_k, global_f )
 u = np.matmul ( np.linalg.inv(Kff), Ff )
 print(u)
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 #provided in case you want to solve the shear beam problem using SymPy
 import sympy as sym
 
