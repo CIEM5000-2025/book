@@ -55,7 +55,7 @@ With:
 - $EA = \infty$
 
 
-```{exercise-start}
+```{exercise-start} Frame
 :label: exercise_frame
 :nonumber: true
 ```
