@@ -32,6 +32,11 @@ Our matrix method implementation is now completely stored in a local package, co
 :replace_default: "True"
 ```
 
+```{custom_download_link} ./Workshop_1_Implement_stripped_sol.ipynb
+:text: ".ipynb solution"
+:replace_default: "False"
+```
+
 ```{custom_download_link} ./Workshop_1_Implement.md
 :text: ".md:myst"
 :replace_default: "False"
@@ -39,6 +44,11 @@ Our matrix method implementation is now completely stored in a local package, co
 
 ```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments
 :text: "All files practice assignments"
+:replace_default: "False"
+```
+
+```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_workshop_1
+:text: "All files practice assignments solutions workshop 1"
 :replace_default: "False"
 ```
 
