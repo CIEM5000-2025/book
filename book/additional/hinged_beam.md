@@ -55,6 +55,7 @@ With:
 
 ```{exercise-start} Hinged beam
 :label: exercise_hinged_beam
+:nonumber: true
 ```
 
 Solve this problem. How do you deal with the hinges?
