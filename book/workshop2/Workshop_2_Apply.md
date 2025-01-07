@@ -138,3 +138,107 @@ And the following displacements:
 - in global coordinate system:
 ![](https://raw.githubusercontent.com/ibcmrocha/public/main/displacements_global.svg)
 ::::::
+
++++
+
+```{solution-start} exercise_ws_1
+:class: dropdown
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+EI = 1500
+EA = 1000
+q = 9
+L = 5
+phibar = 0.15
+
+mm.Node.clear()
+mm.Element.clear()
+
+nodes = []
+
+nodes.append(mm.Node(0,0))
+nodes.append(mm.Node(L,-L))
+nodes.append(mm.Node(2*L,0))
+
+elems = []
+
+elems.append(mm.Element(nodes[0], nodes[1]))
+elems.append(mm.Element(nodes[1], nodes[2]))
+
+section = {}
+section['EI'] = EI
+section['EA'] = EA
+
+for elem in elems:
+    elem.set_section(section)
+    print(elem)
+
+con = mm.Constrainer()
+
+con.fix_dof (nodes[0], 0)
+con.fix_dof (nodes[0], 1)
+con.fix_dof (nodes[2], 0)
+con.fix_dof (nodes[2], 1)
+con.fix_dof (nodes[2], 2, phibar)
+
+elems[0].add_distributed_load([0,q])
+elems[1].add_distributed_load([0,2*q])
+
+print(con)
+
+global_k = np.zeros ((3*len(nodes), 3*len(nodes)))
+global_f = np.zeros (3*len(nodes))
+
+for e in elems:
+    elmat = e.stiffness()
+    idofs = e.global_dofs()
+    
+    global_k[np.ix_(idofs,idofs)] += elmat
+
+for n in nodes:
+    global_f[n.dofs] += n.p
+
+Kc, Fc = con.constrain ( global_k, global_f )
+u_free = np.matmul ( np.linalg.inv(Kc), Fc )
+print(u_free)
+
+print(con.support_reactions(global_k,u_free,global_f))
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+for elem in elems:
+    u_elem = con.full_disp(u_free)[elem.global_dofs()]
+    elem.plot_displaced(u_elem,num_points=51,global_c=False,scale=1)
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+for elem in elems:
+    u_elem = con.full_disp(u_free)[elem.global_dofs()]
+    elem.plot_displaced(u_elem,num_points=51,global_c=True,scale=1)
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+for elem in elems:
+    u_elem = con.full_disp(u_free)[elem.global_dofs()]
+    elem.plot_moment_diagram(u_elem,num_points=20,global_c=False)
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+for elem in elems:
+    u_elem = con.full_disp(u_free)[elem.global_dofs()]
+    elem.plot_moment_diagram(u_elem,num_points=20,global_c=True,scale=0.05)
+```
+
+```{solution-end}
+```
