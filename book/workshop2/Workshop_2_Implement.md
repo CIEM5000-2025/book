@@ -341,6 +341,58 @@ Use the code blocks below to set up and solve this problem and check the require
 ```{exercise-end}
 ```
 
+```{solution-start} 2_exercise3.2
+:class: dropdown
+```
+
+- The displacements will be zero, as everything is fixed
+- The support reactions should be each $\cfrac{1}{2}qL = \cfrac{1}{2}\cdot 10 \cdot 1 = 5$ to the left
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+EA = 1000
+q = 10
+L  = 1
+
+mm.Node.clear()
+mm.Element.clear()
+
+node1 = mm.Node (0,0)
+node2 = mm.Node (L,0)
+
+elem = mm.Element ( node1, node2 )
+
+section = {}
+section['EA'] = EA
+
+elem.set_section (section)
+elem.add_distributed_load([q,0])
+print(elem)
+
+con = mm.Constrainer()
+
+con.fix_node (node1)
+con.fix_node (node2)
+
+print(con)
+
+global_k = elem.stiffness()
+global_f = np.zeros (6)
+
+global_f[0:3] = node1.p
+global_f[3:6] = node2.p
+
+Kc, Fc = con.constrain ( global_k, global_f )
+u_free = np.matmul ( np.linalg.inv(Kc), Fc )
+print(u_free)
+
+print(con.support_reactions(global_k,u_free,global_f))
+```
+
+```{solution-end}
+```
+
 Again, we're going to verify our implementation. Therefore, we're going solve a beam, with a load $F$ and support displacement $\bar w$ for the right support.
 
 ```{figure} https://raw.githubusercontent.com/ibcmrocha/public/main/sanitycheck_3.3_new.png
@@ -363,4 +415,76 @@ Use the code blocks below to set up and solve this problem and check the require
 ```
 
 ```{exercise-end}
+```
+
+```{solution-start} 2_exercise3.3
+:class: dropdown
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+EI = 1000
+F  = 10
+L  = 1
+w_B = 0.1
+
+mm.Node.clear()
+mm.Element.clear()
+
+node1 = mm.Node (0,0)
+node2 = mm.Node (L,0)
+node2.add_load([0,F,0])
+
+elem = mm.Element ( node1, node2 )
+
+section = {}
+section['EI'] = EI
+
+elem.set_section (section)
+
+print(elem)
+
+con = mm.Constrainer()
+
+con.fix_node (node1)
+con.fix_dof (node2,1,w_B)
+
+print(con)
+
+global_k = elem.stiffness()
+global_f = np.zeros (6)
+
+global_f[0:3] = node1.p
+global_f[3:6] = node2.p
+
+Kc, Fc = con.constrain ( global_k, global_f )
+u_free = np.matmul ( np.linalg.inv(Kc), Fc )
+print(u_free)
+
+print(con.support_reactions(global_k,u_free,global_f))
+```
+
+- The rotation at B corresponds with the forget-me-not solution $\cfrac{3}{2} \cfrac{w_B}{L}=\cfrac{3}{2} \cdot \cfrac{0.1}{1} = 0.15$
+- The moment at A corresponds with the ODE solution of $\cfrac{3  EI}{L^2 w_B}=\cfrac{3 \cdot 1000}{1^2 \cdot 0.1} = 300$
+- The vertical support reaction at A corresponds with the ODE solution of $\cfrac{3  EI}{L^3 w_B}=\cfrac{3 \cdot 1000}{1^3 \cdot 0.1} = 300$
+- The vertical support reaction at B corresponds with the ODE solution of $\cfrac{3  EI}{L^3 w_B}=\cfrac{3 \cdot 1000}{1^3 \cdot 0.1} = 300$ minus the load $F = 10$. The $10$ and $290$ together are equal to the reaction force of $300$
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+u_elem = con.full_disp(u_free)[elem.global_dofs()]
+elem.plot_moment_diagram(u_elem,num_points=51)
+```
+
+```{code-cell} ipython3
+:tags: [thebe-init]
+
+deflections = elem.full_displacement(u_elem,3)
+elem.plot_displaced(u_elem,num_points=51,global_c=False)
+```
+
+- The moment line and displacement line look as expected.
+
+```{solution-end}
 ```
