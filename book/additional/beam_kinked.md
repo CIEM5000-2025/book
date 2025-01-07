@@ -5,6 +5,10 @@ jupytext:
     format_name: myst
     format_version: 0.13
     jupytext_version: 1.16.2
+kernelspec:
+  display_name: base
+  language: python
+  name: python3
 ---
 
 # Kinked beam
@@ -51,7 +55,7 @@ With:
 
 Solve this problem.
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [thebe-remove-input-init]
 
 import matplotlib as plt
@@ -61,7 +65,7 @@ import matrixmethod_solution as mm
 %config InlineBackend.figure_formats = ['svg']
 ```
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [remove-cell]
 
 import matplotlib as plt
@@ -70,7 +74,7 @@ import matrixmethod_solution as mm
 %config InlineBackend.figure_formats = ['svg']
 ```
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [disable-execution-cell]
 
 import numpy as np
@@ -79,7 +83,7 @@ import matrixmethod as mm
 %config InlineBackend.figure_formats = ['svg']
 ```
 
-```{code-cell}
+```{code-cell} ipython3
 #YOUR_CODE_HERE
 ```
 
@@ -93,14 +97,20 @@ import matrixmethod as mm
 - This problem could be solved without any additional coding by adding an additional node at the points load halfway beam (2)
 - Another options is to add an element with a concentrated load at midspan. This option is chosen here.
 
-```{code-cell}
-:tags: [thebe-init]
+```{code-cell} ipython3
+:tags: [thebe-remove-input-init]
+
+import sympy as sym
+```
+
+```{code-cell} ipython3
+:tags: [disable-execution-cell]
 
 import sympy as sym
 sym.init_printing()
 ```
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [thebe-init]
 
 EI, F, x = sym.symbols('EI, F, x')
@@ -124,7 +134,8 @@ eq2 = sym.Eq(w.subs(x,L),w_2)
 eq3 = sym.Eq(phi.subs(x,0),phi_1)
 eq4 = sym.Eq(phi.subs(x,L),phi_2)
 C_sol = sym.solve([eq1, eq2, eq3, eq4 ], sym.symbols('C1, C2, C3, C4'))
-display(C_sol)
+for key in C_sol:
+    display(sym.Eq(key, C_sol[key]))
 
 display(sym.collect(M.subs(C_sol).expand(),[w_1,w_2,phi_1,phi_2, F]))
 display(sym.collect(w.subs(C_sol).expand(),[w_1,w_2,phi_1,phi_2, F]))
@@ -146,7 +157,7 @@ display(A,b)
 - The new expression for w is: $\phi_{1} \left(- x + \frac{2 x^{2}}{L} - \frac{x^{3}}{L^{2}}\right) + \phi_{2} \left(\frac{x^{2}}{L} - \frac{x^{3}}{L^{2}}\right) + w_{1} \cdot \left(1 - \frac{3 x^{2}}{L^{2}} + \frac{2 x^{3}}{L^{3}}\right) + w_{2} \cdot \left(\frac{3 x^{2}}{L^{2}} - \frac{2 x^{3}}{L^{3}}\right) + \frac{F L x^{2}}{16 EI} - \frac{F x^{3}}{12 EI} + \frac{F \left(\begin{cases} \left(- \frac{L}{2} + x\right)^{3} & \text{for}\: x > \frac{L}{2} \\0 & \text{otherwise} \end{cases}\right)}{6 EI}$
 - These changes have been implemented in the `EB_point_load_element` class in [`./matrixmethod/elements.py`](exercise_beam_kinked_py).
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [thebe-init]
 
 mm.Node.clear()
@@ -211,7 +222,7 @@ print(u)
 print(con.support_reactions(global_k,u,global_f))
 ```
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [thebe-init]
 
 for elem in elems:
@@ -219,7 +230,7 @@ for elem in elems:
     elem.plot_displaced(u_elem,num_points=51,global_c=True,scale=20)
 ```
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [thebe-init]
 
 for elem in elems:
