@@ -58,7 +58,7 @@ With:
 - $q = 6$
 - $F = 40$
 
-```{exercise-start}
+```{exercise-start} Kinked beam
 :label: exercise_beam_kinked
 ```
 
