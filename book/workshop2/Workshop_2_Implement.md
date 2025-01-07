@@ -97,7 +97,7 @@ The implementation is incomplete:
 Add the missing pieces to the code, before you perform the checks below.
 ```
 
-````{solution} exercise2.1
+````{solution} 2_exercise2.1
 :class: dropdown
 
 The stiffness matrix is specified in the global coordinate system.
