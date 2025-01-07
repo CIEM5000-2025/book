@@ -102,6 +102,14 @@ import matrixmethod_solution as mm
 ```
 
 ```{code-cell} ipython3
+:tags: [remove-cell]
+
+import numpy as np
+import matrixmethod_solution as mm
+%config InlineBackend.figure_formats = ['svg']
+```
+
+```{code-cell} ipython3
 import numpy as np
 import matrixmethod as mm
 %config InlineBackend.figure_formats = ['svg']
