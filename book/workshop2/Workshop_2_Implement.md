@@ -250,9 +250,6 @@ print(moments)
 elem.plot_moment_diagram(u_elem,num_points=51)
 ```
 
-The rotations corresponds with the forget-me-not solution $\cfrac{qL^3}{24\cdot EI} = \cfrac{10 \cdot 1^3}{24\cdot 1000} \approx 0.0004166$
-```
-
 - The moment corresponds with the well known solution $\cfrac{1}{8}qL^2=\cfrac{1}{8}\cdot 10 \cdot 1^2 = 1.25$
 - The shape is parabolic, as expected.
 
@@ -286,9 +283,6 @@ print(deflections)
 elem.plot_displaced(u_elem,num_points=51,global_c=False)
 ```
 
-The rotations corresponds with the forget-me-not solution $\cfrac{qL^3}{24\cdot EI} = \cfrac{10 \cdot 1^3}{24\cdot 1000} \approx 0.0004166$
-```
-
 - The deflection corresponds with the forget-me-not solution $\cfrac{5}{384} \cfrac{qL^4}{EI}=\cfrac{5}{384} \cfrac{10 \cdot 1^4}{1000} \approx 0.0001302$
 - The shape of the deflection is a 4th order polynomial, as expected.
 
@@ -309,6 +303,14 @@ We're going to expand our Constrainer class, but the implementation is incomplet
 Add the missing pieces to the code and docstring, before you perform the checks below.
 
 ```
+
+````{solution} 2_exercise3.1
+:class: dropdown
+
+For the code implementations see `./matrixmethod/constrainer.py`:
+- [`constrain`](2_exercise3_1_py_1)
+- [`support_reactions`](2_exercise3_1_py_2)
+````
 
 +++
 

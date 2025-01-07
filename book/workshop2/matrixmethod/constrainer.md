@@ -112,7 +112,30 @@ class Constrainer:
         Ff = f[self.free_dofs]
 
         return Kff, Ff
+```
 
++++
+
+(2_exercise3_1_py_1)=
+```{solution-start} 2_exercise3.1
+:class: dropdown
+```
+
+```{code-cell} ipython3
+        self.free_dofs = [i for i in range(len(f)) if i not in self.cons_dofs]
+        
+        Kff = k[np.ix_(self.free_dofs,self.free_dofs)]
+        Ff = f[self.free_dofs]
+
+        return Kff, Ff
+```
+
+```{solution-end}
+```
+
++++
+        
+```{code-cell} ipython3
     def support_reactions (self,k,u_free,f):       
         """
         Calculates the support reactions based on the constrained displacements.
@@ -128,7 +151,28 @@ class Constrainer:
         #YOUR CODE HERE
         
         return #YOUR CODE HERE
+```
 
++++
+
+(2_exercise3_1_py_2)=
+```{solution-start} 2_exercise3.1
+:class: dropdown
+```
+
+```{code-cell} ipython3
+        Kcf = k[np.ix_(self.cons_dofs,self.free_dofs)]
+        Kcc = k[np.ix_(self.cons_dofs,self.cons_dofs)]
+
+        return np.matmul(Kcf,u_free) + np.matmul(Kcc,self.cons_vals) - f[self.cons_dofs]
+```
+
+```{solution-end}
+```
+
++++
+        
+```{code-cell} ipython3
     def __str__(self):
         """
         Returns a string representation of the Constrainer object.
