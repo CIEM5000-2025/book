@@ -60,7 +60,6 @@ With:
 
 ```{exercise-start}
 :label: exercise_beam_kinked
-:nonumber: true
 ```
 
 Solve this problem.

@@ -57,7 +57,6 @@ With:
 
 ```{exercise-start}
 :label: exercise_frame
-:nonumber: true
 ```
 
 Solve this problem by simplifying the stiffness matrix first.
