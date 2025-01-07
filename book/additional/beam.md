@@ -182,3 +182,6 @@ for elem in elems:
     u_elem = con.full_disp(u)[elem.global_dofs()]
     elem.plot_moment_diagram(u_elem,num_points=51,global_c=True,scale=0.01)
 ```
+
+```{solution-end}
+```
