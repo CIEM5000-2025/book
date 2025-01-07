@@ -22,6 +22,11 @@ This page shows a preview of the assignment. Please fork and clone the assignmen
 :replace_default: "True"
 ```
 
+```{custom_download_link} ./beam_kinked_stripped_sol.ipynb
+:text: ".ipynb solution"
+:replace_default: "True"
+```
+
 ```{custom_download_link} ./beam_kinked.md
 :text: ".md:myst"
 :replace_default: "False"

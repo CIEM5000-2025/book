@@ -23,7 +23,7 @@ This page shows a preview of the assignment. Please fork and clone the assignmen
 ```
 
 ```{custom_download_link} ./frame_stripped_sol.ipynb
-:text: ".md:myst"
+:text: ".ipynb solution"
 :replace_default: "False"
 ```
 
