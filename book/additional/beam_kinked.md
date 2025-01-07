@@ -32,6 +32,11 @@ This page shows a preview of the assignment. Please fork and clone the assignmen
 :replace_default: "False"
 ```
 
+```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_additional_exercises
+:text: "All files additional practice assignments"
+:replace_default: "False"
+```
+
 Given is the following beam {cite:p}`additional_Hans`:
 
 ```{figure} https://raw.githubusercontent.com/ibcmrocha/public/main/newforce.png
