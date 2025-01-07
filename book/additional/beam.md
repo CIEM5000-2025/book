@@ -37,7 +37,7 @@ This page shows a preview of the assignment. Please fork and clone the assignmen
 :replace_default: "False"
 ```
 
-Given is the following beam {cite:t}`additional_Hans`:
+Given is the following beam {cite:p}`additional_Hans`:
 
 ```{figure} https://raw.githubusercontent.com/ibcmrocha/public/main/beam.png
 :align: center
