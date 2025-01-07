@@ -30,6 +30,11 @@ Our matrix method implementation is now completely stored in a local package, co
 :replace_default: "True"
 ```
 
+```{custom_download_link} ./Workshop_2_Apply_stripped_sol.ipynb
+:text: ".ipynb solution"
+:replace_default: "False"
+```
+
 ```{custom_download_link} ./Workshop_2_Apply.md
 :text: ".md:myst"
 :replace_default: "False"
@@ -39,6 +44,12 @@ Our matrix method implementation is now completely stored in a local package, co
 :text: "All files practice assignments"
 :replace_default: "False"
 ```
+
+```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_workshop_2
+:text: "All files practice assignments solutions workshop 2"
+:replace_default: "False"
+```
+
 
 ## Two-element frame
 

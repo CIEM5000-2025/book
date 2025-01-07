@@ -28,6 +28,11 @@ In this notebook you will continue to implement the matrix method and check it w
 :replace_default: "True"
 ```
 
+```{custom_download_link} ./Workshop_2_Implement_stripped_sol.ipynb
+:text: ".ipynb solution"
+:replace_default: "False"
+```
+
 ```{custom_download_link} ./Workshop_2_Implement.md
 :text: ".md:myst"
 :replace_default: "False"
@@ -35,6 +40,11 @@ In this notebook you will continue to implement the matrix method and check it w
 
 ```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments
 :text: "All files practice assignments"
+:replace_default: "False"
+```
+
+```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_workshop_2
+:text: "All files practice assignments solutions workshop 2"
 :replace_default: "False"
 ```
 
