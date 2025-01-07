@@ -18,11 +18,6 @@ kernelspec:
 :replace_default: "False"
 ```
 
-```{custom_download_link} ../matrixmethod_solution/__init__.py
-:text: ".py solution"
-:replace_default: "False"
-```
-
 ```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments
 :text: "All files practice assignments"
 :replace_default: "False"
