@@ -18,8 +18,18 @@ kernelspec:
 :replace_default: "False"
 ```
 
+```{custom_download_link} ../matrixmethod_solution/elements.py
+:text: ".py solution"
+:replace_default: "False"
+```
+
 ```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments
 :text: "All files practice assignments"
+:replace_default: "False"
+```
+
+```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_additional_exercises
+:text: "All files additional practice assignments"
 :replace_default: "False"
 ```
 
@@ -339,4 +349,120 @@ class Element:
         The string includes the values of the node1, node2 attributes.
         """
         return f"Element connecting:\nnode #1:\n {self.nodes[0]}\nwith node #2:\n {self.nodes[1]}"
+```
+
++++
+
+(exercise_beam_kinked_py)=
+```{solution-start} exercise_beam_kinked
+:class: dropdown
+```
+
+```{code-cell} ipython3
+class EB_point_load_element (Element):
+    """
+    The EB_point_load_element class describes an element combining extension and Euler-Bernoulli bending with a point load.
+
+    Attributes:
+        node1 (Node): The first node of the element.
+        node2 (Node): The second node of the element.
+        EA (float): Axial stiffness of the element.
+        EI (float): Bending stiffness of the element.
+        F (float): Point load in local z direction.
+        L (float): Length of the element.
+
+    Methods:
+        add_point_load_halfway(self, F): Adds a point load to the element.
+        bending_moments(u_global, num_points=2): Calculates the bending moments along the element.
+        full_displacement(u_global, num_points=2): Calculates the displacement along the element.
+
+    Inherits from:
+        Element: Base class for all structural elements.
+    """
+    def add_point_load_halfway(self, F):
+        """
+        Adds a point load to the element.
+
+        Parameters:
+            F (float): Point load in local z direction.
+
+        Returns:
+            None
+        """
+        self.F = F
+        l = self.L
+
+        el = [0, F / 2, - F * l / 8, 0, F / 2, F * l / 8]
+
+        eg = np.matmul(self.Tt, np.array(el))
+
+        self.nodes[0].add_load(eg[0:3])
+        self.nodes[1].add_load(eg[3:6])
+
+    def bending_moments (self, u_global, num_points=2):
+        """
+        Calculates the bending moments along the element.
+
+        Args:
+            u_global (numpy.ndarray): Global displacement vector of the element.
+            num_points (int, optional): Number of points to calculate the bending moments. Default is 2.
+
+        Returns:
+            numpy.ndarray: Array of bending moments along the element.
+        """
+        L = self.L
+        F = self.F
+        EI= self.EI
+
+        x = np.linspace ( 0.0, L, num_points )
+        M  = np.zeros(num_points)
+
+        ul = np.matmul ( self.T, u_global )
+        
+        w_1   = ul[1]
+        phi_1 = ul[2]
+        w_2   = ul[4]
+        phi_2 = ul[5]
+        
+        M = -F*L/8 + F*x/2 + phi_1*(-4*EI/L + 6*EI*x/L**2) + phi_2*(-2*EI/L + 6*EI*x/L**2) + w_1*(6*EI/L**2 - 12*EI*x/L**3) + w_2*(-6*EI/L**2 + 12*EI*x/L**3)
+        index_halfway = int(num_points/2)
+        M[index_halfway:] += - F*(-L/2 + x[index_halfway:])
+        return M
+    
+    def full_displacement (self, u_global, num_points=2):
+        """
+        Calculates the displacement along the element.
+
+        Args:
+            u_global (numpy.ndarray): Global displacement vector of the element.
+            num_points (int, optional): Number of points to calculate the bending moments. Default is 2.
+
+        Returns:
+            numpy.ndarray: Array of displacement along the element.
+        """
+        L = self.L
+        F = self.F
+        q_x = self.q[0]
+        EI= self.EI
+        EA = self.EA
+
+        x = np.linspace ( 0.0, L, num_points )
+
+        ul = np.matmul ( self.T, u_global )
+        
+        u_1   = ul[0]
+        w_1   = ul[1]
+        phi_1 = ul[2]
+        u_2   = ul[3]
+        w_2   = ul[4]
+        phi_2 = ul[5]
+        
+        u = q_x*(-L*x/(2*EA) + x**2/(2*EA)) + u_1*(1 - x/L) + u_2*x/L
+        w = phi_1*(-x + 2*x**2/L - x**3/L**2) + phi_2*(x**2/L - x**3/L**2) + w_1*(1 - 3*x**2/L**2 + 2*x**3/L**3) + w_2*(3*x**2/L**2 - 2*x**3/L**3) + F*L*x**2/(16*EI) - F*x**3/(12*EI)
+        index_halfway = int(num_points/2)
+        w[index_halfway:] += F*(x[index_halfway:] - L/2)**3/(6*EI)
+        return u, w
+```
+
+```{solution-end}
 ```
