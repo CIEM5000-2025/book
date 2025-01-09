@@ -15,7 +15,7 @@ Next to that, you'll work on applying the content in two workshops. The assignme
 
 Additional assignment are available to work on, which you should be able to make after finishing the workshops. These are available in [](additional.md).
 
-On ... there'll be question hours for the full CIEM5000 module. During these you'll have the opportunity to ask questions on this submodule too.
+On Thursdays there'll be question hours for the full CIEM5000 module. During these you'll have the opportunity to ask questions on this submodule too.
 
 (exam-general)=
 ## Assessment
@@ -23,7 +23,9 @@ The learning will be assessed with one assignment provided to you after the seco
 
 This assignment is part of the Assignment Portfolio of unit 2, where it counts for 33%. This portfolio will account for 20% of your total grade of CIEM5000.
 
-The deadline of the assignment is ..., although you're encouraged to finish it directly after completing workshop 2. Doing so allows you to split the workload evenly.
+The deadline of the assignment has to be determined, although you're encouraged to finish it directly after completing workshop 2. Doing so allows you to split the workload evenly.
+
+You can take the resit of this assignment in Q4. If you choose to do so, you can improve your first submission. The deadline of the resit has to be determined too.
 
 The assignment is graded according to the following rubric:
 
