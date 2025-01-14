@@ -144,21 +144,21 @@ As this structure is loaded along its axis, the differential equation for extens
 
 For the first field this gives:
 
-- $\class{cA}{EA_1\cfrac{\mrm{d}^2u_1}{\mrm{d}x^2}=0}$
-- $\class{cA}{N_1 = C_1}$
-- $\class{cA}{u_1(x) = \cfrac{C_1}{EA}x + C_2}$
-- Boundary conditions: $\class{cA}{u_1(0) = 0}$
+- $\cA{EA_1\cfrac{\mrm{d}^2u_1}{\mrm{d}x^2}=0}$
+- $\cA{N_1 = C_1}$
+- $\cA{u_1(x) = \cfrac{C_1}{EA}x + C_2}$
+- Boundary conditions: $\cA{u_1(0) = 0}$
 
 For the second field it gives:
 
-- $\class{cB}{EA_2\cfrac{\mrm{d}^2u_2}{\mrm{d}x^2}=0}$
-- $\class{cB}{N_2 = C_3}$
-- $\class{cB}{u_2(x) = \cfrac{C_3}{EA}x + C_4}$
-- Boundary conditions: $\class{cB}{N_2(\ell_1+\ell_2) = F}$
+- $\cB{EA_2\cfrac{\mrm{d}^2u_2}{\mrm{d}x^2}=0}$
+- $\cB{N_2 = C_3}$
+- $\cB{u_2(x) = \cfrac{C_3}{EA}x + C_4}$
+- Boundary conditions: $\cB{N_2(\ell_1+\ell_2) = F}$
 
 The two remaining integration constants can be solved by specifying interface conditions:
-- $\class{cA}{u_1(\ell_1)} = \class{cB}{u_2(\ell_1)}$
-- $\class{cA}{N_1} = \class{cB}{N_2}$
+- $\cA{u_1(\ell_1)} = \cB{u_2(\ell_1)}$
+- $\cA{N_1} = \cB{N_2}$
 
 +++
 
