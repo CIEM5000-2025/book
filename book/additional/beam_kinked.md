@@ -17,6 +17,10 @@ kernelspec:
 This page shows a preview of the assignment. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2025/practice-assignments)
 ::::::
 
+::::::{versionadded} v1.2.0 After workshop 2
+Solutions in text and downloads 
+::::::
+
 ```{custom_download_link} ./beam_kinked_stripped.ipynb
 :text: ".ipynb"
 :replace_default: "True"
@@ -38,7 +42,7 @@ This page shows a preview of the assignment. Please fork and clone the assignmen
 ```
 
 ```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_additional_exercises
-:text: "All files additional practice assignments"
+:text: "All files practice assignments with solutions additional exercises"
 :replace_default: "False"
 ```
 

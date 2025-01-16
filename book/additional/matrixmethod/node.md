@@ -13,6 +13,10 @@ kernelspec:
 
 # `node.py`
 
+::::::{versionadded} v1.2.0 After workshop 2
+Solutions in downloads 
+::::::
+
 ```{custom_download_link} node.py
 :text: ".py"
 :replace_default: "False"
@@ -24,7 +28,7 @@ kernelspec:
 ```
 
 ```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_additional_exercises
-:text: "All files additional practice assignments"
+:text: "All files practice assignments with solutions additional exercises"
 :replace_default: "False"
 ```
 

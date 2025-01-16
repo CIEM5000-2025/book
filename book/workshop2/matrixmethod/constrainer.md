@@ -13,6 +13,10 @@ kernelspec:
 
 # `constrainer.py`
 
+::::::{versionadded} v1.2.0 After workshop 2
+Solutions in text and downloads 
+::::::
+
 ```{custom_download_link} constrainer.py
 :text: ".py"
 :replace_default: "False"
@@ -24,7 +28,7 @@ kernelspec:
 ```
 
 ```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_workshop_2
-:text: "All files practice assignments solutions workshop 2"
+:text: "All files practice assignments with solutions workshop 2"
 :replace_default: "False"
 ```
 

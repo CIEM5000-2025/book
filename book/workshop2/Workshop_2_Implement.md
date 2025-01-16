@@ -15,8 +15,10 @@ kernelspec:
   
 ::::::{attention}
 This page shows a preview of the assignment. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2025/practice-assignments)
+::::::
 
-After the workshop, the solution will be added to this preview and to the [GitHub-repository](https://github.com/CIEM5000-2025/practice-assignments)
+::::::{versionadded} v1.2.0 After workshop 2
+Solutions in text and downloads 
 ::::::
 
 In this notebook you will continue to implement the matrix method and check it with some sanity checks.
@@ -44,7 +46,7 @@ In this notebook you will continue to implement the matrix method and check it w
 ```
 
 ```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_workshop_2
-:text: "All files practice assignments solutions workshop 2"
+:text: "All files practice assignments with solutions workshop 2"
 :replace_default: "False"
 ```
 

@@ -17,6 +17,10 @@ kernelspec:
 This page shows a preview of the assignment. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2025/practice-assignments)
 ::::::
 
+::::::{versionadded} v1.2.0 After workshop 2
+Solutions in text and downloads 
+::::::
+
 In this notebook you will solve a 2-element frame at the end of the notebook.
 
 +++
@@ -46,7 +50,7 @@ Our matrix method implementation is now completely stored in a local package, co
 ```
 
 ```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_workshop_2
-:text: "All files practice assignments solutions workshop 2"
+:text: "All files practice assignments with solutions workshop 2"
 :replace_default: "False"
 ```
 
