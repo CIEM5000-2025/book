@@ -4,7 +4,7 @@
 Nothing has changed in this book since the start of this course
 
 (v1.1.0)=
-## v1.1.0 after workshop 1
+## v1.1.0 After workshop 1
 - Added solutions to text and downloads [Activities - Workshop 1 - Apply](./workshop1/Workshop_1_Apply.ipynb)
 - Added solutions to text and downloads [Activities - Workshop 1 - Implement](./workshop1/Workshop_1_Implement.ipynb)
 - Added solutions to downloads [Activities - Workshop 1 - matrixmethod](./workshop1/matrixmethod.md)
