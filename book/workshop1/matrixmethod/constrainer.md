@@ -13,6 +13,10 @@ kernelspec:
 
 # `constrainer.py`
 
+::::::{versionadded} after workshop 1
+Solutions added
+::::::
+
 ```{custom_download_link} constrainer.py
 :text: ".py"
 :replace_default: "False"

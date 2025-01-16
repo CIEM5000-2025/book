@@ -17,6 +17,10 @@ kernelspec:
 This page shows a preview of the assignment. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2025/practice-assignments)
 ::::::
 
+::::::{versionadded} after workshop 1
+Solutions added
+::::::
+
 In this notebook you will implement the matrix method and check it with some sanity checks.
 
 +++
