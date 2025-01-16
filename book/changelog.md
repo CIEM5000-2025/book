@@ -1,8 +1,5 @@
 # Changelog
 
-## v1.0.0 Start course
-Nothing has changed in this book since the start of this course
-
 (v1.1.0)=
 ## v1.1.0 After workshop 1
 - Added solutions to downloads [Activities - Workshop 1](./workshop1.md)
@@ -14,4 +11,7 @@ Nothing has changed in this book since the start of this course
 - Added solutions to text and downloads [Activities - Workshop 1 - matrixmethod - `elements.py`](./workshop1/matrixmethod/elements.md)
 - Added solutions to text and downloads [Activities - Workshop 1 - matrixmethod - `constrainer.py`](./workshop1/matrixmethod/constrainer.md)
 - See full changelog [here](TBP)
+
+## v1.0.0 Start course
+Nothing has changed in this book since the start of this course
 
