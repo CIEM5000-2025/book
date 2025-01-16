@@ -13,6 +13,10 @@ kernelspec:
 
 # `__init__.py`
 
+::::::{versionadded} v1.1.0 After workshop 1
+Solutions in downloads 
+::::::
+
 ```{custom_download_link} __init__.py
 :text: ".py"
 :replace_default: "False"

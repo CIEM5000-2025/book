@@ -13,8 +13,8 @@ kernelspec:
 
 # `elements.py`
 
-::::::{versionadded} after workshop 1
-Solutions added
+::::::{versionadded} v1.1.0 After workshop 1
+Solutions in text and downloads 
 ::::::
 
 ```{custom_download_link} elements.py
