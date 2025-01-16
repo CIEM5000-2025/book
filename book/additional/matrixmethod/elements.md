@@ -22,12 +22,7 @@ Solutions in text and downloads
 :replace_default: "False"
 ```
 
-```{custom_download_link} ../matrixmethod_solution/elements.py
-:text: ".py solution"
-:replace_default: "False"
-```
-
-```{custom_download_link} ../matrixmethod_solution/elements.py
+```{custom_download_link} ../matrixmethod_solution_2/elements.py
 :text: ".py solution"
 :replace_default: "False"
 ```

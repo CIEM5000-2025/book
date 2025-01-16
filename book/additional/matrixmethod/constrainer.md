@@ -22,7 +22,7 @@ Solutions in text and downloads
 :replace_default: "False"
 ```
 
-```{custom_download_link} ../matrixmethod_solution/constrainer.py
+```{custom_download_link} ../matrixmethod_solution_2/constrainer.py
 :text: ".py solution"
 :replace_default: "False"
 ```

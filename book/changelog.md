@@ -17,9 +17,9 @@ Nothing has changed in this book since the start of this course
 
 (v1.2.0)=
 ## v1.2.0 After workshop 2
-- Added solutions to downloads [Activities - Workshop 2](./workshop1/workshop2.md)
-- Added solutions to text and downloads [Activities - Workshop 2 - Apply](./workshop1/Workshop_2_Apply.ipynb)
-- Added solutions to text and downloads [Activities - Workshop 2 - Implement](./workshop1/Workshop_2_Implement.ipynb)
+- Added solutions to downloads [Activities - Workshop 2](./workshop2.md)
+- Added solutions to text and downloads [Activities - Workshop 2 - Apply](./workshop2/Workshop_2_Apply.ipynb)
+- Added solutions to text and downloads [Activities - Workshop 2 - Implement](./workshop2/Workshop_2_Implement.ipynb)
 - Added solutions to downloads [Activities - Workshop 2 - matrixmethod](./workshop2/matrixmethod.md)
 - Added solutions to downloads [Activities - Workshop 2 - matrixmethod - `__init__.py`](./workshop2/matrixmethod/__init__.md)
 - Added solutions to downloads [Activities - Workshop 2 - matrixmethod - `node.py`](./workshop2/matrixmethod/node.md)
