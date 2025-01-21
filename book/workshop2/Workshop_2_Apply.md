@@ -255,3 +255,103 @@ for elem in elems:
 
 ```{solution-end}
 ```
+
+```{exercise-start} 2
+:label: exercise_ws_2_2
+:nonumber: true
+
+You've now implemented the matrix method yourself! However, there are many implementation our there. Therefore, let's implement another package which you'll use during the next weeks when using the matrix method for dynamics: PyDSMSM.
+
+The library is provided here: **to be provided**
+
+```
+
+```{code-cell} ipython3
+:tags: [thebe-remove-input-init]
+
+import matplotlib as plt
+import numpy as np
+sys.path.insert(1, '/pydynsm')
+import numpy.linalg as LA
+import scipy.optimize as opt
+import pydynsm as PDM
+%config InlineBackend.figure_formats = ['svg']
+```
+
+```{code-cell} ipython3
+:tags: [disable-execution-cell]
+
+import numpy as np
+import matplotlib as plt
+import pydynsm as PDM
+import numpy.linalg as LA
+import scipy.optimize as opt
+%config InlineBackend.figure_formats = ['svg']
+```
+
+```{code-cell} ipython3
+# Initialize the Assembler
+
+Assembler = PDM.Assembler  #Import the Assembler class from the PDM module
+
+s1 = Assembler('1D EB',analysis_type='new')
+```
+
+```{code-cell} ipython3
+E = 1000
+I = 1.5
+A = 1
+q = 9
+L = 5
+phibar = 0.15
+```
+
+```{code-cell} ipython3
+node1 = s1.CreateNode(0,0)
+node2 = s1.CreateNode(L,_L)
+node3 = s1.CreateNode(2*L,0)
+elem1 = s1.CreateElement([node1,node2])
+elem2 = s1.CreateElement([node1,node2])
+```
+
+```{code-cell} ipython3
+s1.PlotStructure(plot_elements=True)
+```
+
+```{code-cell} ipython3
+node1.fix_node('x','z')
+node1.apply_dof_change_to_elements('phi_y',phi_bar)
+node3.fix_node('x','z')
+```
+
+```{code-cell} ipython3
+elem1.SetSection('EulerBernoulli Beam', {'E': E, 'A':A, 'Ib':I})
+elem2.SetSection('EulerBernoulli Beam', {'E': E, 'A':A, 'Ib':I})
+```
+
+```{code-cell} ipython3
+s1.run_connectivity()
+```
+
+```{code-cell} ipython3
+K_global = s1.GlobalStiffness()
+F_global = s1.GlobalForce()
+```
+
+```{code-cell} ipython3
+Kc_global = s1.GlobalConstrainedStiffness()
+Fc_global = s1.GlobalConstrainedForce()
+```
+
+```{code-cell} ipython3
+u_free = s1.SolveUfree(Kc_global, Fc_global)
+```
+
+```{code-cell} ipython3
+print(f'The free end solution is {u_free}')
+print(f'The free end vertical displacement is {u_free[0].real} m')
+print(f'The free end vertical rotation is {u_free[1].real} rad')
+```
+
+```{exercise-end}
+```
