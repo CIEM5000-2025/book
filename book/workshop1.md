@@ -5,8 +5,15 @@
 :replace_default: "False"
 ```
 
+```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_workshop_1
+:text: "All files practice assignments solutions workshop 1"
+:replace_default: "False"
+```
+
+::::::{versionadded} v1.1.0 After workshop 1
+Solutions in downloads 
+::::::
+
 During today's workshop you'll implement and check missing components, and solve a complicated frame.
 
 These pages show a preview of the assignment. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2025/practice-assignments)
-
-After the workshop, the solution will be added to this preview and to the [GitHub-repository](https://github.com/CIEM5000-2025/practice-assignments)

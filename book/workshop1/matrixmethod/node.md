@@ -13,6 +13,10 @@ kernelspec:
 
 # `node.py`
 
+::::::{versionadded} v1.1.0 After workshop 1
+Solutions in downloads 
+::::::
+
 ```{custom_download_link} node.py
 :text: ".py"
 :replace_default: "False"
@@ -20,6 +24,11 @@ kernelspec:
 
 ```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments
 :text: "All files practice assignments"
+:replace_default: "False"
+```
+
+```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_workshop_1
+:text: "All files practice assignments solutions workshop 1"
 :replace_default: "False"
 ```
 
@@ -110,5 +119,5 @@ class Node:
         Returns:
             str: A string representation of the node.
         """
-        return f"This node has:\n - x coordinate={self.x},\n - z coordinate={self.z},\n - degrees of freedom={self.dofs},\n - load vector={self.p})"
+        return f"This node has:\n - x coordinate={self.x},\n - z coordinate={self.z},\n - degrees of freedom={self.dofs},\n - load vector={self.p}"
 ```

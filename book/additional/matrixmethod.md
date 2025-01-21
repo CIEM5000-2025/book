@@ -1,10 +1,17 @@
 # matrixmethod
 
-The following subpages contain a preview of the `.py` files which together form the matrixmethod package.
+::::::{versionadded} v1.2.0 After workshop 2
+Solutions in downloads 
+::::::
 
-After workshop 1, the solution to workshop 1 will be added to this preview and to the [GitHub-repository](https://github.com/CIEM5000-2025/practice-assignments). After workshop 2, the solution to workshop 2 and the additional assignments will be added too.
+The following subpages contain a preview of the `.py` files which together form the matrixmethod package.
 
 ```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments
 :text: "All files practice assignments"
+:replace_default: "False"
+```
+
+```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_additional_exercises
+:text: "All files practice assignments with solutions additional exercises"
 :replace_default: "False"
 ```

@@ -13,13 +13,27 @@ kernelspec:
 
 # `constrainer.py`
 
+::::::{versionadded} v1.2.0 After workshop 2
+Solutions in text and downloads 
+::::::
+
 ```{custom_download_link} constrainer.py
 :text: ".py"
 :replace_default: "False"
 ```
 
+```{custom_download_link} ../matrixmethod_solution_2/constrainer.py
+:text: ".py solution"
+:replace_default: "False"
+```
+
 ```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments
 :text: "All files practice assignments"
+:replace_default: "False"
+```
+
+```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_additional_exercises
+:text: "All files practice assignments with solutions additional exercises"
 :replace_default: "False"
 ```
 
@@ -108,8 +122,8 @@ class Constrainer:
         """
         self.free_dofs = [i for i in range(len(f)) if i not in self.cons_dofs]
         
-        Kff #= k[np.ix_(YOUR CODE HERE)]
-        Ff # YOUR CODE HERE
+        Kff = k[np.ix_(self.free_dofs,self.free_dofs)]
+        Ff = f[self.free_dofs]
 
         return Kff, Ff
 
