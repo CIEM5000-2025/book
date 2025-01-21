@@ -266,6 +266,15 @@ The library is provided here: **to be provided**
 
 ```
 
+
+```{exercise-end}
+```
+
+```{solution-start} exercise_ws_2_2
+:class: dropdown
+```
+
+
 ```{code-cell} ipython3
 :tags: [thebe-remove-input-init]
 
@@ -369,5 +378,5 @@ disp = s1.ElementDisplacements(u_elem)
 s1.PlotElementDisplacements(disp,scale=1.0)
 ```
 
-```{exercise-end}
+```{solution-end}
 ```
