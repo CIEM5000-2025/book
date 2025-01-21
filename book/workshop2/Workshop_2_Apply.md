@@ -274,7 +274,6 @@ The library is provided here: **to be provided**
 :class: dropdown
 ```
 
-
 ```{code-cell} ipython3
 :tags: [thebe-remove-input-init]
 
