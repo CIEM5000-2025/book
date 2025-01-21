@@ -308,10 +308,10 @@ phibar = 0.15
 
 ```{code-cell} ipython3
 node1 = s1.CreateNode(0,0)
-node2 = s1.CreateNode(L,_L)
+node2 = s1.CreateNode(L,L)
 node3 = s1.CreateNode(2*L,0)
 elem1 = s1.CreateElement([node1,node2])
-elem2 = s1.CreateElement([node1,node2])
+elem2 = s1.CreateElement([node2,node3])
 ```
 
 ```{code-cell} ipython3
@@ -320,13 +320,21 @@ s1.PlotStructure(plot_elements=True)
 
 ```{code-cell} ipython3
 node1.fix_node('x','z')
-node1.apply_dof_change_to_elements('phi_y',phi_bar)
+node1.apply_dof_change_to_elements('phi_y',phibar)
 node3.fix_node('x','z')
 ```
 
 ```{code-cell} ipython3
+# Can this be defined without the dynamic properties?
 elem1.SetSection('EulerBernoulli Beam', {'E': E, 'A':A, 'Ib':I})
 elem2.SetSection('EulerBernoulli Beam', {'E': E, 'A':A, 'Ib':I})
+```
+
+```{code-cell} ipython3
+# How to add a distributed load to an element in the local coordinate system?
+q_r = lambda ?
+q_b = lambda ?
+elem.AddDistributedLoad(x=q_r, z=q_b)
 ```
 
 ```{code-cell} ipython3
@@ -334,6 +342,7 @@ s1.run_connectivity()
 ```
 
 ```{code-cell} ipython3
+# could the package be defined to a static case when omega is not provided?
 K_global = s1.GlobalStiffness()
 F_global = s1.GlobalForce()
 ```
@@ -348,9 +357,16 @@ u_free = s1.SolveUfree(Kc_global, Fc_global)
 ```
 
 ```{code-cell} ipython3
-print(f'The free end solution is {u_free}')
-print(f'The free end vertical displacement is {u_free[0].real} m')
-print(f'The free end vertical rotation is {u_free[1].real} rad')
+u_elem = s1.FullDisplacement(u_free)
+print(f'u_elem = \n{u_elem}\n')
+```
+
+```{code-cell} ipython3
+disp = s1.ElementDisplacements(u_elem)
+```
+
+```{code-cell} ipython3
+s1.PlotElementDisplacements(disp,scale=1.0)
 ```
 
 ```{exercise-end}
