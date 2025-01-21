@@ -298,6 +298,8 @@ import scipy.optimize as opt
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 # Initialize the Assembler
 
 Assembler = PDM.Assembler  #Import the Assembler class from the PDM module
@@ -306,6 +308,8 @@ s1 = Assembler('1D EB',analysis_type='new')
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 E = 1000
 I = 1.5
 A = 1
@@ -315,6 +319,8 @@ phibar = 0.15
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 node1 = s1.CreateNode(0,0)
 node2 = s1.CreateNode(L,L)
 node3 = s1.CreateNode(2*L,0)
@@ -323,22 +329,30 @@ elem2 = s1.CreateElement([node2,node3])
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 s1.PlotStructure(plot_elements=True)
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 node1.fix_node('x','z')
 node1.apply_dof_change_to_elements('phi_y',phibar)
 node3.fix_node('x','z')
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 # Can this be defined without the dynamic properties?
 elem1.SetSection('EulerBernoulli Beam', {'E': E, 'A':A, 'Ib':I})
 elem2.SetSection('EulerBernoulli Beam', {'E': E, 'A':A, 'Ib':I})
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 # How to add a distributed load to an element in the local coordinate system?
 q_r = lambda ?
 q_b = lambda ?
@@ -346,34 +360,48 @@ elem.AddDistributedLoad(x=q_r, z=q_b)
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 s1.run_connectivity()
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 # could the package be defined to a static case when omega is not provided?
 K_global = s1.GlobalStiffness()
 F_global = s1.GlobalForce()
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 Kc_global = s1.GlobalConstrainedStiffness()
 Fc_global = s1.GlobalConstrainedForce()
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 u_free = s1.SolveUfree(Kc_global, Fc_global)
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 u_elem = s1.FullDisplacement(u_free)
 print(f'u_elem = \n{u_elem}\n')
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 disp = s1.ElementDisplacements(u_elem)
 ```
 
 ```{code-cell} ipython3
+:tags: [thebe-init]
+
 s1.PlotElementDisplacements(disp,scale=1.0)
 ```
 
