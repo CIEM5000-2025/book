@@ -1,68 +1,6 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.16.2
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
-
-# `elements.py`
-
-::::::{versionadded} v1.2.0 After workshop 2
-Solutions workshop 2 and additional assignments in text and downloads 
-::::::
-
-::::::{versionadded} v1.1.0 After workshop 1
-Solutions workshop 1 in text and downloads 
-::::::
-
-::::::{attention}
-This page shows a preview of the `matrixmethod` package. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2025/practice-assignments)
-
-After each workshop, the solution will be added to this preview and to the [GitHub-repository](https://github.com/CIEM5000-2025/practice-assignments)
-::::::
-
-```{custom_download_link} elements.py
-:text: ".py"
-:replace_default: "False"
-```
-
-```{custom_download_link} ./matrixmethod_solution_2/elements.py
-:text: ".py solution workshop 1, 2 and additional assignments"
-:replace_default: "False"
-```
-
-```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments
-:text: "All files practice assignments"
-:replace_default: "False"
-```
-
-```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_workshop_1
-:text: "All files practice assignments with solutions workshop 1"
-:replace_default: "False"
-```
-
-```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_workshop_2
-:text: "All files practice assignments with solutions workshop 2"
-:replace_default: "False"
-```
-
-```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_additional_exercises
-:text: "All files practice assignments with solutions additional exercises"
-```
-
-
-```{code-cell} ipython3
 import numpy as np
 import matplotlib.pyplot as plt
-```
 
-```{code-cell} ipython3
 class Element:
     """
     The Element class keeps track of each element in the model, including cross-section properties, 
@@ -130,33 +68,6 @@ class Element:
 
         self.L = np.sqrt((self.nodes[1].x - self.nodes[0].x)**2.0 + (self.nodes[1].z - self.nodes[0].z)**2.0)
 
-        alpha = np.arctan2 #YOUR CODE HERE
-
-        T = np.zeros((6, 6))
-
-        T[0, 0] = T[1, 1] = T[3, 3] = T[4, 4] #YOUR CODE HERE
-        T[0, 1] = T[3, 4] #YOUR CODE HERE
-        T[1, 0] = T[4, 3] #YOUR CODE HERE
-        T[2, 2] = T[5, 5] #YOUR CODE HERE
-
-        self.T = T
-        self.Tt = np.transpose(T)
-
-        self.q = np.array([0,0])
-        self.local_element_load = np.array([0,0,0,0,0,0])
-        
-        Element.ne += 1
-```
-
-+++
-
-(exercise2_1_py)=
-```{solution-start} exercise2.1
-:class: dropdown
-```
-
-```{code-cell} ipython3
-
         alpha = np.arctan2( - (self.nodes[1].z - self.nodes[0].z) , (self.nodes[1].x - self.nodes[0].x))
 
         T = np.zeros((6, 6))
@@ -166,14 +77,13 @@ class Element:
         T[1, 0] = T[4, 3] = np.sin(alpha)
         T[2, 2] = T[5, 5] = 1
 
-```
+        self.T = T
+        self.Tt = np.transpose(T)
 
-```{solution-end}
-```
-
-+++
+        self.q = np.array([0,0])
+        self.local_element_load = np.array([0,0,0,0,0,0])
         
-```{code-cell} ipython3
+        Element.ne += 1
 
     def set_section(self, props):
         """
@@ -219,21 +129,6 @@ class Element:
         EI = self.EI
         L = self.L
 
-        #YOUR CODE HERE
-
-        return np.matmul(np.matmul(self.Tt, k), self.T)
-
-```
-
-+++
-
-(exercise2_1_2_py)=
-```{solution-start} exercise2.1
-:class: dropdown
-```
-
-```{code-cell} ipython3
-
         # Extension contribution
 
         k[0, 0] = k[3, 3] = EA / L
@@ -249,15 +144,6 @@ class Element:
         k[2, 5] = k[5, 2] = 2.0 * EI / L
 
         return np.matmul(np.matmul(self.Tt, k), self.T)
-
-```
-
-```{solution-end}
-```
-
-+++
-        
-```{code-cell} ipython3
 
     def add_distributed_load(self, q):
         """
@@ -437,263 +323,3 @@ class Element:
         The string includes the values of the node1, node2 attributes.
         """
         return f"Element connecting:\nnode #1:\n {self.nodes[0]}\nwith node #2:\n {self.nodes[1]}"
-```
-
-+++
-
-(exercise_beam_kinked_py)=
-```{solution-start} exercise_beam_kinked
-:class: dropdown
-```
-
-```{code-cell} ipython3
-class EB_point_load_element (Element):
-    """
-    The EB_point_load_element class describes an element combining extension and Euler-Bernoulli bending with a point load.
-
-    Attributes:
-        node1 (Node): The first node of the element.
-        node2 (Node): The second node of the element.
-        EA (float): Axial stiffness of the element.
-        EI (float): Bending stiffness of the element.
-        F (float): Point load in local z direction.
-        L (float): Length of the element.
-
-    Methods:
-        add_point_load_halfway(self, F): Adds a point load to the element.
-        bending_moments(u_global, num_points=2): Calculates the bending moments along the element.
-        full_displacement(u_global, num_points=2): Calculates the displacement along the element.
-
-    Inherits from:
-        Element: Base class for all structural elements.
-    """
-    def add_point_load_halfway(self, F):
-        """
-        Adds a point load to the element.
-
-        Parameters:
-            F (float): Point load in local z direction.
-
-        Returns:
-            None
-        """
-        self.F = F
-        l = self.L
-
-        el = [0, F / 2, - F * l / 8, 0, F / 2, F * l / 8]
-
-        eg = np.matmul(self.Tt, np.array(el))
-
-        self.nodes[0].add_load(eg[0:3])
-        self.nodes[1].add_load(eg[3:6])
-
-    def bending_moments (self, u_global, num_points=2):
-        """
-        Calculates the bending moments along the element.
-
-        Args:
-            u_global (numpy.ndarray): Global displacement vector of the element.
-            num_points (int, optional): Number of points to calculate the bending moments. Default is 2.
-
-        Returns:
-            numpy.ndarray: Array of bending moments along the element.
-        """
-        L = self.L
-        F = self.F
-        EI= self.EI
-
-        x = np.linspace ( 0.0, L, num_points )
-        M  = np.zeros(num_points)
-
-        ul = np.matmul ( self.T, u_global )
-        
-        w_1   = ul[1]
-        phi_1 = ul[2]
-        w_2   = ul[4]
-        phi_2 = ul[5]
-        
-        M = -F*L/8 + F*x/2 + phi_1*(-4*EI/L + 6*EI*x/L**2) + phi_2*(-2*EI/L + 6*EI*x/L**2) + w_1*(6*EI/L**2 - 12*EI*x/L**3) + w_2*(-6*EI/L**2 + 12*EI*x/L**3)
-        index_halfway = int(num_points/2)
-        M[index_halfway:] += - F*(-L/2 + x[index_halfway:])
-        return M
-    
-    def full_displacement (self, u_global, num_points=2):
-        """
-        Calculates the displacement along the element.
-
-        Args:
-            u_global (numpy.ndarray): Global displacement vector of the element.
-            num_points (int, optional): Number of points to calculate the bending moments. Default is 2.
-
-        Returns:
-            numpy.ndarray: Array of displacement along the element.
-        """
-        L = self.L
-        F = self.F
-        q_x = self.q[0]
-        EI= self.EI
-        EA = self.EA
-
-        x = np.linspace ( 0.0, L, num_points )
-
-        ul = np.matmul ( self.T, u_global )
-        
-        u_1   = ul[0]
-        w_1   = ul[1]
-        phi_1 = ul[2]
-        u_2   = ul[3]
-        w_2   = ul[4]
-        phi_2 = ul[5]
-        
-        u = q_x*(-L*x/(2*EA) + x**2/(2*EA)) + u_1*(1 - x/L) + u_2*x/L
-        w = phi_1*(-x + 2*x**2/L - x**3/L**2) + phi_2*(x**2/L - x**3/L**2) + w_1*(1 - 3*x**2/L**2 + 2*x**3/L**3) + w_2*(3*x**2/L**2 - 2*x**3/L**3) + F*L*x**2/(16*EI) - F*x**3/(12*EI)
-        index_halfway = int(num_points/2)
-        w[index_halfway:] += F*(x[index_halfway:] - L/2)**3/(6*EI)
-        return u, w
-```
-
-```{solution-end}
-```
-
-+++
-
-(exercise_hinged_beam_py)=
-```{solution-start} exercise_hinged_beam
-:class: dropdown
-```
-
-```{code-cell} ipython3
-class hinged_element (Element):
-    """
-    The hinged_element class describes an element combining extension and Euler-Bernoulli bending with a hinge at the left end.
-
-    Attributes:
-        node1 (Node): The first node of the element.
-        node2 (Node): The second node of the element.
-        EA (float): Axial stiffness of the element.
-        EI (float): Bending stiffness of the element.
-        F (float): Point load in local z direction.
-        L (float): Length of the element.
-
-    Methods:
-        stiffness(self): Calculate the stiffness matrix of the element.
-        add_distributed_load(self, q): Adds a distributed load to the element.
-        bending_moments(u_global, num_points=2): Calculates the bending moments along the element.
-        full_displacement(u_global, num_points=2): Calculates the displacement along the element.
-
-    Inherits from:
-        Element: Base class for all structural elements.
-    """
-    def stiffness(self):
-        """
-        Calculate the stiffness matrix of the element.
-
-        Returns:
-        np.ndarray: The stiffness matrix of the element.
-        """
-        k = np.zeros((6, 6))
-
-        EA = self.EA
-        EI = self.EI
-        L = self.L
-
-        # Extension contribution
-
-        k[0, 0] = k[3, 3] = EA / L
-        k[3, 0] = k[0, 3] = -EA / L
-
-        # Bending contribution
-
-        k[1, 1] = k[4, 4] = 3 * EI / L / L / L
-        k[1, 4] = k[4, 1] = -3 * EI / L / L / L
-        k[1, 5] = k[5, 1] = -3 * EI / L / L
-        k[4, 5] = k[5, 4] = 3 * EI / L / L
-        k[5, 5] = 3 * EI / L
-
-        return np.matmul(np.matmul(self.Tt, k), self.T)
-
-    def add_distributed_load(self, q):
-        """
-        Adds a distributed load to the element.
-
-        Parameters:
-            q (list): List of distributed load in local x and z direction.
-
-        Returns:
-            None
-        """
-
-        l = self.L
-        self.q = np.array(q)
-
-        el = [0.5 * q[0] * l, 3/8 * q[1] * l, 0, 0.5 * q[0] * l, 5/8 * q[1] * l, 1.0 / 8 * q[1] * l * l]
-
-        eg = np.matmul(self.Tt, np.array(el))
-
-        self.nodes[0].add_load(eg[0:3])
-        self.nodes[1].add_load(eg[3:6])
-
-
-    def bending_moments (self, u_global, num_points=2):
-        """
-        Calculates the bending moments along the element.
-
-        Args:
-            u_global (numpy.ndarray): Global displacement vector of the element.
-            num_points (int, optional): Number of points to calculate the bending moments. Default is 2.
-
-        Returns:
-            numpy.ndarray: Array of bending moments along the element.
-        """
-        L = self.L
-        q_z = self.q[1]
-        EI= self.EI
-
-        x = np.linspace ( 0.0, L, num_points )
-        M  = np.zeros(num_points)
-
-        ul = np.matmul ( self.T, u_global )
-        
-        w_1   = ul[1]
-        phi_1 = ul[2]
-        w_2   = ul[4]
-        phi_2 = ul[5]
-        
-        M = 3*EI*phi_2*x/L**2 - 3*EI*w_1*x/L**3 + 3*EI*w_2*x/L**3 + 3*L*q_z*x/8 - q_z*x**2/2
-        return M
-    
-    def full_displacement (self, u_global, num_points=2):
-        """
-        Calculates the displacement along the element.
-
-        Args:
-            u_global (numpy.ndarray): Global displacement vector of the element.
-            num_points (int, optional): Number of points to calculate the bending moments. Default is 2.
-
-        Returns:
-            numpy.ndarray: Array of displacement along the element.
-        """
-        L = self.L
-        q_x = self.q[0]
-        q_z = self.q[1]
-        EI= self.EI
-        EA = self.EA
-
-        x = np.linspace ( 0.0, L, num_points )
-
-        ul = np.matmul ( self.T, u_global )
-        
-        u_1   = ul[0]
-        w_1   = ul[1]
-        phi_1 = ul[2]
-        u_2   = ul[3]
-        w_2   = ul[4]
-        phi_2 = ul[5]
-        
-        u = q_x*(-L*x/(2*EA) + x**2/(2*EA)) + u_1*(1 - x/L) + u_2*x/L
-        w = phi_2*(x/2 - x**3/(2*L**2)) + w_1*(1 - 3*x/(2*L) + x**3/(2*L**3)) + w_2*(3*x/(2*L) - x**3/(2*L**3)) + L**3*q_z*x/(48*EI) - L*q_z*x**3/(16*EI) + q_z*x**4/(24*EI)
-        return u, w
-```
-
-```{solution-end}
-```
