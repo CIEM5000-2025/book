@@ -29,7 +29,7 @@ After each workshop, the solution will be added to this preview and to the [GitH
 ```
 
 ```{custom_download_link} ./matrixmethod_solution/constrainer.py
-:text: ".py solution"
+:text: ".py solution workshop 1"
 :replace_default: "False"
 ```
 
