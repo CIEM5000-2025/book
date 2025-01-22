@@ -32,7 +32,7 @@ After each workshop, the solution will be added to this preview and to the [GitH
 :replace_default: "False"
 ```
 
-```{custom_download_link} ./matrixmethod_solution_2/elements.py
+```{custom_download_link} ./matrixmethod_solution/elements.py
 :text: ".py solution workshop 1, 2 and additional assignments"
 :replace_default: "False"
 ```
