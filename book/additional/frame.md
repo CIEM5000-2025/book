@@ -72,7 +72,7 @@ Solve this problem by simplifying the stiffness matrix first.
 import matplotlib as plt
 import numpy as np
 sys.path.insert(1, '/matrixmethod_solution_2')
-import matrixmethod_solution as mm
+import matrixmethod_solution_2 as mm
 %config InlineBackend.figure_formats = ['svg']
 ```
 
