@@ -82,7 +82,7 @@ $$
 k = \frac{24}{h\left(\displaystyle\frac{h}{EI_k}+\frac{b}{EI_r}\right)}
 $$
 
-```{exercise-start}
+```{exercise-start} Workshop 1 - Apply
 :label: exercise_ws_1
 :nonumber: true
 
