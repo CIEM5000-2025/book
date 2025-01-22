@@ -13,6 +13,10 @@ kernelspec:
 
 # `constrainer.py`
 
+::::::{versionadded} v1.2.0 After workshop 2
+Solutions workshop 2 and additional assignments in text and downloads 
+::::::
+
 ::::::{versionadded} v1.1.0 After workshop 1
 Solutions workshop 1 in text and downloads 
 ::::::
@@ -22,8 +26,18 @@ Solutions workshop 1 in text and downloads
 :replace_default: "False"
 ```
 
+```{custom_download_link} ../matrixmethod_solution_2/constrainer.py
+:text: ".py solution"
+:replace_default: "False"
+```
+
 ```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments
 :text: "All files practice assignments"
+:replace_default: "False"
+```
+
+```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_additional_exercises
+:text: "All files practice assignments with solutions additional exercises"
 :replace_default: "False"
 ```
 
