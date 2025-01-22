@@ -11,7 +11,7 @@
 ```
 
 ::::::{versionadded} v1.1.0 After workshop 1
-Solutions in downloads 
+Solutions workshop 1 in downloads 
 ::::::
 
 During today's workshop you'll implement and check missing components, and solve a complicated frame.

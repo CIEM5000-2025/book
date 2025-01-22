@@ -18,7 +18,7 @@ This page shows a preview of the assignment. Please fork and clone the assignmen
 ::::::
 
 ::::::{versionadded} v1.1.0 After workshop 1
-Solutions in text and downloads 
+Solutions workshop 1 in text and downloads 
 ::::::
 
 In this notebook you will work on a homework assignment involving a Vierendeel frame.

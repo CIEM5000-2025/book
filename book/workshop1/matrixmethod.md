@@ -1,7 +1,7 @@
 # matrixmethod
 
 ::::::{versionadded} v1.1.0 After workshop 1
-Solutions in downloads 
+Solutions workshop 1 in downloads 
 ::::::
 
 The following subpages contain a preview of the `.py` files which together form the matrixmethod package.

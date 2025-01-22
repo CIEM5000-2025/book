@@ -14,7 +14,7 @@ kernelspec:
 # `constrainer.py`
 
 ::::::{versionadded} v1.1.0 After workshop 1
-Solutions in text and downloads 
+Solutions workshop 1 in text and downloads 
 ::::::
 
 ```{custom_download_link} constrainer.py
@@ -152,7 +152,6 @@ class Constrainer:
 +++
         
 ```{code-cell} ipython3
-
     def support_reactions (self,k,u_free,f):       
         """
         Calculates the support reactions based on the constrained displacements.
