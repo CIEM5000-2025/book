@@ -18,7 +18,7 @@ This page shows a preview of the assignment. Please fork and clone the assignmen
 ::::::
 
 ::::::{versionadded} v1.1.0 After workshop 1
-Solutions in text and downloads 
+Solutions workshop 1 in text and downloads 
 ::::::
 
 In this notebook you will implement the matrix method and check it with some sanity checks.
@@ -54,7 +54,7 @@ Our matrix method implementation is now completely stored in a local package, co
 :replace_default: "False"
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [thebe-remove-input-init]
 
 import matplotlib as plt
@@ -64,7 +64,7 @@ import matrixmethod_solution as mm
 %config InlineBackend.figure_formats = ['svg']
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [remove-cell]
 
 import matplotlib as plt
@@ -73,7 +73,7 @@ import matrixmethod_solution as mm
 %config InlineBackend.figure_formats = ['svg']
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [disable-execution-cell]
 
 import numpy as np
@@ -87,7 +87,7 @@ This class is stored in `./matrixmethod/node.py`
 
 The purpose of this class is to store node information and keep track of the total number of DOFs of the problem. Note the automatic bookkeeping we introduce in `__init__`. This simple but efficient way of keeping track of which DOFs belong to which nodes will make life much easier when we need to assemble matrices from multiple elements. The Node class doesn't need any modification.
 
-```{exercise-start} 1.1
+```{exercise-start} Workshop 1 - 1.1
 :label: exercise1.1
 :nonumber: true
 :class: exercise
@@ -95,7 +95,7 @@ The purpose of this class is to store node information and keep track of the tot
 To test whether you understand how the class works, create two nodes on coordinates ($0$,$0$) and ($3$,$4$) and print the string representation of both nodes. The `clear` function is called to restart the node and DOF counters. Make sure this is done whenever you start solving a new problem.
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 mm.Node.clear()
 
 node1 #= mm.Node(YOUR CODE HERE
@@ -134,7 +134,7 @@ This node has:
 :class: dropdown
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [thebe-init]
 
 mm.Node.clear()
@@ -168,7 +168,7 @@ However, the implementation is incomplete:
 - We keep the functions which add a distributed load and compute the moments / displacements untouched for this week. Next week we'll implement those as well.
 
 
-```{exercise} 2.1
+```{exercise} Workshop 1 - 2.1
 :label: exercise2.1
 :nonumber: true
 
@@ -190,7 +190,7 @@ For the code implementations see `./matrixmethod/elements.py`:
 
 Whenever you make changes to your code in the `./matrixmethod/` folder, you need to reimport those. Instead of restarting the kernel, we use some magic ipython commands. Run the cell below once. Consequently, whenever you save your changes in one of the `.py`-files, it's automatically reloaded.
 
-```{code-cell} ipython3
+```{code-cell}
 %load_ext autoreload
 %autoreload 2
 ```
@@ -199,7 +199,7 @@ Whenever you make changes to your code in the `./matrixmethod/` folder, you need
 Note that in this online book, you cannot make changes to multiple files simultaneously. These instructions are only applicable when you're working on this assignment locally; please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2025/practice-assignments).
 ::::::
 
-```{exercise-start} 2.2
+```{exercise-start} Workshop 1 - 2.2
 :label: exercise2.2
 :nonumber: true
 
@@ -208,14 +208,14 @@ First, let's check the stiffness matrix for a beam which doesn't require rotatio
 Do the matrices match with what you'd expect?
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [thebe-init]
 
 mm.Node.clear()
 mm.Element.clear()
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 #YOUR CODE HERE
 
 elem #= mm.Element(#YOUR CODE HERE
@@ -235,14 +235,14 @@ print(elem.stiffness())
 :class: dropdown
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [thebe-init]
 
 mm.Node.clear()
 mm.Element.clear()
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [thebe-init]
 
 node1 = mm.Node(0,0)
@@ -266,7 +266,7 @@ print(elem.stiffness())
 ```{solution-end}
 ```
 
-```{exercise-start} 2.3
+```{exercise-start} Workshop 1 - 2.3
 :label: exercise2.3
 :nonumber: true
 
@@ -275,7 +275,7 @@ Now, create a vertical element with length $2$ and $EI=4$ and print the transfor
 Do the matrices match with what you'd expect?
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 #YOUR CODE HERE
 ```
 
@@ -286,7 +286,7 @@ Do the matrices match with what you'd expect?
 :class: dropdown
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [thebe-init]
 
 mm.Node.clear()
@@ -313,7 +313,7 @@ print(elem.stiffness())
 ```{solution-end}
 ```
 
-```{exercise-start} 2.4
+```{exercise-start} Workshop 1 - 2.4
 :label: exercise2.4
 :nonumber: true
 
@@ -322,7 +322,7 @@ Now, create an element rotated in $120^{\circ}$ with length $2$ and print the tr
 Do the matrices match with what you'd expect?
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 #YOUR CODE HERE
 ```
 
@@ -333,7 +333,7 @@ Do the matrices match with what you'd expect?
 :class: dropdown
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [thebe-init]
 
 mm.Node.clear()
@@ -354,7 +354,7 @@ print(elem.T)
 ```{solution-end}
 ```
 
-```{exercise-start} 2.5
+```{exercise-start} Workshop 1 - 2.5
 :label: exercise2.5
 :nonumber: true
 
@@ -363,7 +363,7 @@ Now, create an element rotated in $60^{\circ}$ with length $2$ and print the tra
 Do the matrices match with what you'd expect?
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 #YOUR CODE HERE
 ```
 
@@ -374,7 +374,7 @@ Do the matrices match with what you'd expect?
 :class: dropdown
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [thebe-init]
 
 mm.Node.clear()
@@ -395,7 +395,7 @@ print(elem.T)
 ```{solution-end}
 ```
 
-```{exercise-start} 2.6
+```{exercise-start} Workshop 1 - 2.6
 :label: exercise2.6
 :nonumber: true
 
@@ -404,7 +404,7 @@ We're going to apply the transformation matrix to the vector $[0,0,0,\sqrt{3},1,
 Check your answer using pen and paper. Tip: make a drawing instead of doing all the algebra.
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 print(np.matmul(elem.T,np.array([0,0,0,np.sqrt(3),1,0])))
 ```
 
@@ -415,7 +415,7 @@ print(np.matmul(elem.T,np.array([0,0,0,np.sqrt(3),1,0])))
 :class: dropdown
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [thebe-init]
 
 print(np.matmul(elem.T,np.array([0,0,0,np.sqrt(3),1,0])))
@@ -439,7 +439,7 @@ However, the implementation is incomplete:
 
 +++
 
-```{exercise} 3.1
+```{exercise} Workshop 1 - 3.1
 :label: exercise3.1
 :nonumber: true
 
@@ -452,14 +452,14 @@ Add the missing pieces to the code, before you perform the check below
 For the code implementations see `./matrixmethod/constrainer.py`: [`constrain`](exercise3_1_py)
 ````
 
-```{exercise-start} 3.2
+```{exercise-start} Workshop 1 - 3.2
 :label: exercise3.2
 :nonumber: true
 
 Take the inclined element of exercise 2.5 and a bending stiffness of $1$. What happens if you invert $\mathbf{K}$? Now fix all degrees of freedom of the first node. What happens when you invert your 'constrained' $\mathbf{K}$? Are the dimensions of the 'constrained' $\mathbf{K}$ correct?
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 #YOUR CODE HERE
 
 con = mm.Constrainer()
@@ -478,7 +478,7 @@ print(np.shape(np.linalg.inv(Kff)))
 :class: dropdown
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [thebe-init]
 
 section = {}
@@ -523,21 +523,21 @@ With $EA = 1000$, $F = 100$ and $L = 1$.
 
 Use the code blocks below to set up and solve this problem using the classes above. The steps to follow are outlined below and short explanations/hints are given. Once you have a solution for the horizontal displacement of the node at the right end of the bar, compare it to the analytical solution you obtained in the first half of the course.
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [thebe-init]
 
 mm.Node.clear()
 mm.Element.clear()
 ```
 
-```{exercise-start} 4.1
+```{exercise-start} Workshop 1 - 4.1
 :nonumber: true
 :label: exercise4.1
 
 Create two nodes here. You can store them on a `list` or simply create them as two separate objects (*e.g.* `node1` and `node2`).
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 #YOUR CODE HERE
 ```
 
@@ -548,7 +548,7 @@ Create two nodes here. You can store them on a `list` or simply create them as t
 :class: dropdown
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [thebe-init]
 
 L  = 1
@@ -560,14 +560,14 @@ node2 = mm.Node (L,0)
 ```{solution-end}
 ```
 
-```{exercise-start} 4.2
+```{exercise-start} Workshop 1 - 4.2
 :nonumber: true
 :label: exercise4.2
 
 Here we only have a single element, so there is no need to store it in a `list` yet. You are also going to need a `dict` defining the cross-section of the element.
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 #YOUR CODE HERE
 ```
 
@@ -578,7 +578,7 @@ Here we only have a single element, so there is no need to store it in a `list` 
 :class: dropdown
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [thebe-init]
 
 elem = mm.Element ( node1, node2 )
@@ -594,7 +594,7 @@ print(elem)
 ```{solution-end}
 ```
 
-```{exercise-start} 4.3
+```{exercise-start} Workshop 1 - 4.3
 :nonumber: true
 :label: exercise4.3
 
@@ -603,7 +603,7 @@ Let's define the boundary conditions. We create an instance of the `Constrainer`
 You also need to pass the load $F$ on to Node 2. Check the member functions of `Node` to infer how that should be done.
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 #YOUR CODE HERE
 ```
 
@@ -614,7 +614,7 @@ You also need to pass the load $F$ on to Node 2. Check the member functions of `
 :class: dropdown
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [thebe-init]
 
 con = mm.Constrainer()
@@ -631,14 +631,14 @@ print(con)
 ```{solution-end}
 ```
 
-```{exercise-start} 4.4
+```{exercise-start} Workshop 1 - 4.4
 :nonumber: true
 :label: exercise4.4
 
 Now assemble the global stiffness matrix and force vector. Since we only have one element, there is no real assembly to be performed other than getting the stiffness matrix of the single element and storing the load at Node 2 in the correct positions of $\mathbf{f}$.
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 #YOUR CODE HERE
 ```
 
@@ -649,7 +649,7 @@ Now assemble the global stiffness matrix and force vector. Since we only have on
 :class: dropdown
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [thebe-init]
 
 global_k = elem.stiffness()
@@ -661,14 +661,14 @@ global_f[3:6] = node2.p
 ```{solution-end}
 ```
 
-```{exercise-start} 4.5
+```{exercise-start} Workshop 1 - 4.5
 :nonumber: true
 :label: exercise4.5
 
 Constrain the problem and solve for nodal displacements.
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 #YOUR CODE HERE
 ```
 
@@ -679,7 +679,7 @@ Constrain the problem and solve for nodal displacements.
 :class: dropdown
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [thebe-init]
 
 Kff, Ff = con.constrain ( global_k, global_f )
@@ -690,14 +690,14 @@ print(u)
 ```{solution-end}
 ```
 
-```{exercise-start} 4.6
+```{exercise-start} Workshop 1 - 4.6
 :nonumber: true
 :label: exercise4.6
 
 Finally, compare the displacement at the end of the bar with the one coming from the ODE solution. Note that since our element is already suitable for frames combining extension and bending, $\mathbf{u}$ has three entries. Which one is the entry that matters to us here? Did your solutions match? If so, that is a sign your implementation is correct. Can you use the function `full_disp` to obtain a vector of all displacements?
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 #EVENTUALLY YOUR CODE HERE
 ```
 
@@ -708,7 +708,7 @@ Finally, compare the displacement at the end of the bar with the one coming from
 :class: dropdown
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [thebe-init]
 
 con.full_disp(u)
@@ -733,21 +733,21 @@ Choose appropriate values yourself
 
 When setting up and solving your model, note that we are now interested in $w$ displacements, our load is now vertical and the cross-section property driving our deformation is now $EI$. Good luck!
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [thebe-init]
 
 mm.Node.clear()
 mm.Element.clear()
 ```
 
-```{exercise-start} 5.1
+```{exercise-start} Workshop 1 - 5.1
 :label: exercise5.1
 :nonumber: true
 
 Create nodes
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 #YOUR CODE HERE
 ```
 
@@ -758,7 +758,7 @@ Create nodes
 :class: dropdown
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [thebe-init]
 
 L  = 1
@@ -769,14 +769,14 @@ node2 = mm.Node (L,0)
 ```{solution-end}
 ```
 
-```{exercise-start} 5.2
+```{exercise-start} Workshop 1 - 5.2
 :label: exercise5.2
 :nonumber: true
 
 Create element
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 #YOUR CODE HERE
 ```
 
@@ -787,7 +787,7 @@ Create element
 :class: dropdown
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [thebe-init]
 
 elem = mm.Element ( node1, node2 )
@@ -803,14 +803,14 @@ print(elem)
 ```{solution-end}
 ```
 
-```{exercise-start} 5.3
+```{exercise-start} Workshop 1 - 5.3
 :label: exercise5.3
 :nonumber: true
 
 Set boundary conditions
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 #YOUR CODE HERE
 ```
 
@@ -821,7 +821,7 @@ Set boundary conditions
 :class: dropdown
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [thebe-init]
 
 con = mm.Constrainer()
@@ -835,14 +835,14 @@ print(con)
 ```{solution-end}
 ```
 
-```{exercise-start} 5.4
+```{exercise-start} Workshop 1 - 5.4
 :label: exercise5.4
 :nonumber: true
 
 Assemble the system of equations.
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 #YOUR CODE HERE
 ```
 
@@ -853,7 +853,7 @@ Assemble the system of equations.
 :class: dropdown
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [thebe-init]
 
 global_k = elem.stiffness()
@@ -866,14 +866,14 @@ global_f[3:6] = node2.p
 ```{solution-end}
 ```
 
-```{exercise-start} 5.5
+```{exercise-start} Workshop 1 - 5.5
 :label: exercise5.5
 :nonumber: true
 
 Constrain the problem and solve for nodal displacements
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 #YOUR CODE HERE
 ```
 
@@ -884,7 +884,7 @@ Constrain the problem and solve for nodal displacements
 :class: dropdown
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 :tags: [thebe-init]
 
 Kff, Ff = con.constrain ( global_k, global_f )
@@ -895,7 +895,7 @@ print(u)
 ```{solution-end}
 ```
 
-```{exercise-start} 5.6
+```{exercise-start} Workshop 1 - 5.6
 :label: exercise5.6
 :nonumber: true
 
@@ -904,7 +904,7 @@ Check with the analytical solution
 Did your solutions match? If so, your implementation is correct!
 ```
 
-```{code-cell} ipython3
+```{code-cell}
 #EVENTUALLY YOUR CODE HERE
 ```
 

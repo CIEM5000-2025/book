@@ -14,7 +14,7 @@ kernelspec:
 # `elements.py`
 
 ::::::{versionadded} v1.1.0 After workshop 1
-Solutions in text and downloads 
+Solutions workshop 1 in text and downloads 
 ::::::
 
 ```{custom_download_link} elements.py
@@ -154,7 +154,6 @@ class Element:
 +++
         
 ```{code-cell} ipython3
-
     def set_section(self, props):
         """
         Sets the section properties of the element.
@@ -213,7 +212,6 @@ class Element:
 ```
 
 ```{code-cell} ipython3
-
         # Extension contribution
 
         k[0, 0] = k[3, 3] = EA / L
@@ -229,7 +227,6 @@ class Element:
         k[2, 5] = k[5, 2] = 2.0 * EI / L
 
         return np.matmul(np.matmul(self.Tt, k), self.T)
-
 ```
 
 ```{solution-end}
@@ -238,7 +235,6 @@ class Element:
 +++
         
 ```{code-cell} ipython3
-
     def add_distributed_load(self, q):
         """
         Adds a distributed load to the element.
