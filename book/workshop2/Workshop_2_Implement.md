@@ -59,7 +59,7 @@ In this notebook you will continue to implement the matrix method and check it w
 Check whether your implementation of last week was correct using the provided solution
 ```
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [thebe-remove-input-init]
 
 import matplotlib as plt
@@ -69,7 +69,7 @@ import matrixmethod_solution as mm
 %config InlineBackend.figure_formats = ['svg']
 ```
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [remove-cell]
 
 import matplotlib as plt
@@ -78,7 +78,7 @@ import matrixmethod_solution as mm
 %config InlineBackend.figure_formats = ['svg']
 ```
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [disable-execution-cell]
 
 import numpy as np
@@ -137,11 +137,11 @@ Choose appropriate values yourself.
 
 Use the code blocks below to set up this problem. After you've added the load, print the element using `print(YOUR ELEMENT)`. Do the shown values for the nodal loads correspond with what you'd expect?
 
-```{code-cell}
+```{code-cell} ipython3
 #YOUR CODE HERE
 ```
 
-```{code-cell}
+```{code-cell} ipython3
 print(#YOUR ELEMENT HERE
 ```
 
@@ -152,7 +152,7 @@ print(#YOUR ELEMENT HERE
 :class: dropdown
 ```
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [thebe-init]
 
 EI = 1000
@@ -175,7 +175,7 @@ elem.set_section (section)
 elem.add_distributed_load([0,10])
 ```
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [thebe-init]
 
 print(elem)
@@ -195,7 +195,7 @@ print(elem)
 
 Now solve the nodal displacements. Once you are done, compare the rotation at the right end of the beam. Does it match a solution you already know?
 
-```{code-cell}
+```{code-cell} ipython3
 #YOUR CODE HERE
 ```
 
@@ -206,7 +206,7 @@ Now solve the nodal displacements. Once you are done, compare the rotation at th
 :class: dropdown
 ```
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [thebe-init]
 
 con = mm.Constrainer()
@@ -241,7 +241,7 @@ The rotations corresponds with the forget-me-not solution $\cfrac{qL^3}{24\cdot 
 
 Calculate the bending moment at midspan and plot the moment distribution using `plot_moment_diagram`. Do the values and shape match with what you'd expect?
 
-```{code-cell}
+```{code-cell} ipython3
 u_elem = con.full_disp(#YOUR CODE HERE)
 #YOUR CODE HERE
 ```
@@ -253,7 +253,7 @@ u_elem = con.full_disp(#YOUR CODE HERE)
 :class: dropdown
 ```
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [thebe-init]
 
 u_elem = con.full_disp(u_free)[elem.global_dofs()] #keep this line
@@ -276,7 +276,7 @@ elem.plot_moment_diagram(u_elem,num_points=51)
 
 Calculate the deflection at midspan and plot the deflected structure using `plot_displaced`. Do the values and shape match with what you'd expect?
 
-```{code-cell}
+```{code-cell} ipython3
 #YOUR CODE HERE
 ```
 
@@ -287,7 +287,7 @@ Calculate the deflection at midspan and plot the deflected structure using `plot
 :class: dropdown
 ```
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [thebe-init]
 
 deflections = elem.full_displacement(u_elem,3)
@@ -346,7 +346,7 @@ Can you say on beforehand what will be the displacements? And what will be the s
 
 Use the code blocks below to set up and solve this problem and check the required quantities to make sure your implementation is correct.
 
-```{code-cell}
+```{code-cell} ipython3
 #YOUR CODE HERE
 ```
 
@@ -360,7 +360,7 @@ Use the code blocks below to set up and solve this problem and check the require
 - The displacements will be zero, as everything is fixed
 - The support reactions should be each $\cfrac{1}{2}qL = \cfrac{1}{2}\cdot 10 \cdot 1 = 5$ to the left
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [thebe-init]
 
 EA = 1000
@@ -422,7 +422,7 @@ Choose appropriate values yourself.
 
 Use the code blocks below to set up and solve this problem and check the required quantities to make sure your implementation is correct.
 
-```{code-cell}
+```{code-cell} ipython3
 #YOUR CODE HERE
 ```
 
@@ -433,7 +433,7 @@ Use the code blocks below to set up and solve this problem and check the require
 :class: dropdown
 ```
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [thebe-init]
 
 EI = 1000
@@ -482,14 +482,14 @@ print(con.support_reactions(global_k,u_free,global_f))
 - The vertical support reaction at A corresponds with the ODE solution of $\cfrac{3  EI}{L^3 w_B}=\cfrac{3 \cdot 1000}{1^3 \cdot 0.1} = 300$
 - The vertical support reaction at B corresponds with the ODE solution of $\cfrac{3  EI}{L^3 w_B}=\cfrac{3 \cdot 1000}{1^3 \cdot 0.1} = 300$ minus the load $F = 10$. The $10$ and $290$ together are equal to the reaction force of $300$
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [thebe-init]
 
 u_elem = con.full_disp(u_free)[elem.global_dofs()]
 elem.plot_moment_diagram(u_elem,num_points=51)
 ```
 
-```{code-cell}
+```{code-cell} ipython3
 :tags: [thebe-init]
 
 deflections = elem.full_displacement(u_elem,3)
