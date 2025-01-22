@@ -1,47 +1,5 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.16.2
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
-
-# `constrainer.py`
-
-::::::{versionadded} v1.1.0 After workshop 1
-Solutions workshop 1 in text and downloads 
-::::::
-
-```{custom_download_link} constrainer.py
-:text: ".py"
-:replace_default: "False"
-```
-
-```{custom_download_link} ./matrixmethod_solution/constrainer.py
-:text: ".py solution"
-:replace_default: "False"
-```
-
-```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments
-:text: "All files practice assignments"
-:replace_default: "False"
-```
-
-```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_workshop_1
-:text: "All files practice assignments with solutions workshop 1"
-:replace_default: "False"
-```
-
-```{code-cell} ipython3
 import numpy as np
-```
 
-```{code-cell} ipython3
 class Constrainer:
     """
     A class that represents a constrainer for fixing degrees of freedom in a structural analysis.
@@ -122,36 +80,11 @@ class Constrainer:
         """
         self.free_dofs = [i for i in range(len(f)) if i not in self.cons_dofs]
         
-        Kff #= k[np.ix_(YOUR CODE HERE)]
-        Ff # YOUR CODE HERE
-
-        return Kff, Ff
-```
-
-+++
-
-(exercise3_1_py)=
-```{solution-start} exercise3.1
-:class: dropdown
-```
-
-```{code-cell} ipython3
-
-        self.free_dofs = [i for i in range(len(f)) if i not in self.cons_dofs]
-        
         Kff = k[np.ix_(self.free_dofs,self.free_dofs)]
         Ff = f[self.free_dofs]
 
         return Kff, Ff
 
-```
-
-```{solution-end}
-```
-
-+++
-        
-```{code-cell} ipython3
     def support_reactions (self,k,u_free,f):       
         """
         Calculates the support reactions based on the constrained displacements.
@@ -176,4 +109,3 @@ class Constrainer:
             str: A string representation of the Constrainer object.
         """
         return f"This constrainer has constrained the degrees of freedom: {self.cons_dofs} with corresponding constrained values: {self.cons_vals})"
-```

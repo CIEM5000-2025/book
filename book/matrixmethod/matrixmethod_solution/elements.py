@@ -1,49 +1,6 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.16.2
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
-
-# `elements.py`
-
-::::::{versionadded} v1.1.0 After workshop 1
-Solutions workshop 1 in text and downloads 
-::::::
-
-```{custom_download_link} elements.py
-:text: ".py"
-:replace_default: "False"
-```
-
-```{custom_download_link} ./matrixmethod_solution/elements.py
-:text: ".py solution"
-:replace_default: "False"
-```
-
-```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments
-:text: "All files practice assignments"
-:replace_default: "False"
-```
-
-```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_workshop_1
-:text: "All files practice assignments with solutions workshop 1"
-:replace_default: "False"
-```
-
-
-```{code-cell} ipython3
 import numpy as np
 import matplotlib.pyplot as plt
-```
 
-```{code-cell} ipython3
 class Element:
     """
     The Element class keeps track of each element in the model, including cross-section properties, 
@@ -111,33 +68,6 @@ class Element:
 
         self.L = np.sqrt((self.nodes[1].x - self.nodes[0].x)**2.0 + (self.nodes[1].z - self.nodes[0].z)**2.0)
 
-        alpha = np.arctan2 #YOUR CODE HERE
-
-        T = np.zeros((6, 6))
-
-        T[0, 0] = T[1, 1] = T[3, 3] = T[4, 4] #YOUR CODE HERE
-        T[0, 1] = T[3, 4] #YOUR CODE HERE
-        T[1, 0] = T[4, 3] #YOUR CODE HERE
-        T[2, 2] = T[5, 5] #YOUR CODE HERE
-
-        self.T = T
-        self.Tt = np.transpose(T)
-
-        self.q = np.array([0,0])
-        self.local_element_load = np.array([0,0,0,0,0,0])
-        
-        Element.ne += 1
-```
-
-+++
-
-(exercise2_1_py)=
-```{solution-start} exercise2.1
-:class: dropdown
-```
-
-```{code-cell} ipython3
-
         alpha = np.arctan2( - (self.nodes[1].z - self.nodes[0].z) , (self.nodes[1].x - self.nodes[0].x))
 
         T = np.zeros((6, 6))
@@ -147,14 +77,13 @@ class Element:
         T[1, 0] = T[4, 3] = np.sin(alpha)
         T[2, 2] = T[5, 5] = 1
 
-```
+        self.T = T
+        self.Tt = np.transpose(T)
 
-```{solution-end}
-```
-
-+++
+        self.q = np.array([0,0])
+        self.local_element_load = np.array([0,0,0,0,0,0])
         
-```{code-cell} ipython3
+        Element.ne += 1
 
     def set_section(self, props):
         """
@@ -200,21 +129,6 @@ class Element:
         EI = self.EI
         L = self.L
 
-        #YOUR CODE HERE
-
-        return np.matmul(np.matmul(self.Tt, k), self.T)
-
-```
-
-+++
-
-(exercise2_1_2_py)=
-```{solution-start} exercise2.1
-:class: dropdown
-```
-
-```{code-cell} ipython3
-
         # Extension contribution
 
         k[0, 0] = k[3, 3] = EA / L
@@ -230,15 +144,6 @@ class Element:
         k[2, 5] = k[5, 2] = 2.0 * EI / L
 
         return np.matmul(np.matmul(self.Tt, k), self.T)
-
-```
-
-```{solution-end}
-```
-
-+++
-        
-```{code-cell} ipython3
 
     def add_distributed_load(self, q):
         """
@@ -418,4 +323,3 @@ class Element:
         The string includes the values of the node1, node2 attributes.
         """
         return f"Element connecting:\nnode #1:\n {self.nodes[0]}\nwith node #2:\n {self.nodes[1]}"
-```

@@ -1,38 +1,5 @@
----
-jupytext:
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.16.2
-kernelspec:
-  display_name: Python 3
-  language: python
-  name: python3
----
-
-# `node.py`
-
-```{custom_download_link} node.py
-:text: ".py"
-:replace_default: "False"
-```
-
-```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments
-:text: "All files practice assignments"
-:replace_default: "False"
-```
-
-```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_workshop_1
-:text: "All files practice assignments with solutions workshop 1"
-:replace_default: "False"
-```
-
-```{code-cell} ipython3
 import numpy as np
-```
 
-```{code-cell} ipython3
 class Node:
     """
     The Node class is used to store node information and keep track of the total number of 
@@ -116,4 +83,3 @@ class Node:
             str: A string representation of the node.
         """
         return f"This node has:\n - x coordinate={self.x},\n - z coordinate={self.z},\n - degrees of freedom={self.dofs},\n - load vector={self.p}"
-```
