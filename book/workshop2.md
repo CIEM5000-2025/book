@@ -4,9 +4,11 @@
 Solutions workshop 2 in downloads 
 ::::::
 
-During today's workshop you'll extend your implementation of the matrix method.
+::::::{attention}
+This pages shows a preview of the assignment including its solution. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2025/practice-assignments)
+::::::
 
-These pages show a preview of the assignment. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2025/practice-assignments)
+During today's workshop you'll extend your implementation of the matrix method.
 
 ```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments
 :text: "All files practice assignments"

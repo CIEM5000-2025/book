@@ -14,6 +14,9 @@
 Solutions workshop 1 in downloads 
 ::::::
 
+::::::{attention}
+This pages shows a preview of the assignment including its solution. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2025/practice-assignments)
+::::::
+
 During today's workshop you'll implement and check missing components, and solve a complicated frame.
 
-These pages show a preview of the assignment. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2025/practice-assignments)
