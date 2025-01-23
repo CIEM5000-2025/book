@@ -28,7 +28,7 @@ Solutions additional assignments  in text and downloads
 
 ```{custom_download_link} ./beam_kinked_stripped_sol.ipynb
 :text: ".ipynb solution"
-:replace_default: "True"
+:replace_default: "False"
 ```
 
 ```{custom_download_link} ./beam_kinked.md
