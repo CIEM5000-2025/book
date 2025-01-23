@@ -18,7 +18,7 @@ This page shows a preview of the assignment. Please fork and clone the assignmen
 ::::::
 
 ::::::{versionadded} v1.2.0 After workshop 2
-Solutions in text and downloads 
+Solutions additional assignments  in text and downloads 
 ::::::
 
 ```{custom_download_link} ./frame_stripped.ipynb
