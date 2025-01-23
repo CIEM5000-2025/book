@@ -18,7 +18,7 @@ This page shows a preview of the assignment. Please fork and clone the assignmen
 ::::::
 
 ::::::{versionadded} v1.2.0 After workshop 2
-Solutions in text and downloads 
+Solutions workshop 2 in text and downloads 
 ::::::
 
 In this notebook you will continue to implement the matrix method and check it with some sanity checks.

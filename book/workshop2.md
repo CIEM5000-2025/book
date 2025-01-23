@@ -1,7 +1,7 @@
 # Workshop 2
 
 ::::::{versionadded} v1.2.0 After workshop 2
-Solutions in downloads 
+Solutions workshop 2 in downloads 
 ::::::
 
 During today's workshop you'll extend your implementation of the matrix method.
