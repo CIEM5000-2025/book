@@ -209,8 +209,6 @@ Do the matrices match with what you'd expect?
 ```
 
 ```{code-cell} ipython3
-:tags: [thebe-init]
-
 mm.Node.clear()
 mm.Element.clear()
 ```
