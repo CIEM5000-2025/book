@@ -74,8 +74,8 @@ Solve this problem.
 
 import matplotlib as plt
 import numpy as np
-sys.path.insert(1, '/matrixmethod_solution_2')
-import matrixmethod_solution_2 as mm
+sys.path.insert(1, '/matrixmethod_solution')
+import matrixmethod_solution as mm
 %config InlineBackend.figure_formats = ['svg']
 ```
 
@@ -84,7 +84,7 @@ import matrixmethod_solution_2 as mm
 
 import matplotlib as plt
 import numpy as np
-import matrixmethod_solution_2 as mm
+import matrixmethod_solution as mm
 %config InlineBackend.figure_formats = ['svg']
 ```
 
