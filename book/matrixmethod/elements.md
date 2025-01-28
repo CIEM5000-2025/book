@@ -13,11 +13,11 @@ kernelspec:
 
 # `elements.py`
 
-::::::{versionadded} v1.2.0 After workshop 2
+::::::{versionadded} v2025.2.0 After workshop 2
 Solutions workshop 2 and additional assignments in text and downloads 
 ::::::
 
-::::::{versionadded} v1.1.0 After workshop 1
+::::::{versionadded} v2025.1.0 After workshop 1
 Solutions workshop 1 in text and downloads 
 ::::::
 

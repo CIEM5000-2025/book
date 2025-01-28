@@ -10,7 +10,7 @@
 :replace_default: "False"
 ```
 
-::::::{versionadded} v1.1.0 After workshop 1
+::::::{versionadded} v2025.1.0 After workshop 1
 Solutions workshop 1 in downloads 
 ::::::
 

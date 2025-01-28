@@ -17,7 +17,7 @@ kernelspec:
 This page shows a preview of the assignment. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2025/practice-assignments)
 ::::::
 
-::::::{versionadded} v1.1.0 After workshop 1
+::::::{versionadded} v2025.1.0 After workshop 1
 Solutions workshop 1 in text and downloads 
 ::::::
 
