@@ -1,6 +1,6 @@
 # Additional assignments
 
-::::::{versionadded} v1.2.0 After workshop 2
+::::::{versionadded} v2025.2.0 After workshop 2
 Solutions additional assignments in downloads 
 ::::::
 

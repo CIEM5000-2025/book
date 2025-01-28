@@ -1,6 +1,6 @@
 # Workshop 2
 
-::::::{versionadded} v1.2.0 After workshop 2
+::::::{versionadded} v2025.2.0 After workshop 2
 Solutions workshop 2 in downloads 
 ::::::
 
