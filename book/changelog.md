@@ -1,5 +1,7 @@
 # Changelog
 
+This changelog will include all changes, except for minor adjustments like typos.
+
 (v2025.2.0)=
 ## v2025.2.0 After workshop 2
 - Added solutions workshop 2 to downloads [Activities - Workshop 2](./workshop2.md)
@@ -31,4 +33,5 @@
 - Converted material to interactive book
 - Separated [Activities - additional assignments](./additional.md)
 - Added [Activities - Lecture 1 - Recap displacement method](./lecture1/displacement.md)
+- New [graded assignment](./assignment.md)
 - Various improvements to student-experience
