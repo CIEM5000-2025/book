@@ -11,7 +11,6 @@ This changelog will include all changes, except for minor adjustments like typos
 - Added solutions additional assignments to text and downloads [Activities - Additional assignments - Beam](./additional/beam.ipynb)
 - Added solutions additional assignments to text and downloads [Activities - Additional assignments - Kinked beam](./additional/beam_kinked.ipynb)
 - Added solutions additional assignments to text and downloads [Activities - Additional assignments - Frame](./additional/frame.ipynb)
-- Added solutions additional assignments to text and downloads [Activities - Additional assignments - Hinged beam](./additional/hinged_beam.ipynb)
 - Added solutions workshop 2 and additional assignments to downloads [matrixmethod package - `__init__.py`](./matrixmethod/__init__.md)
 - Added solutions workshop 2 and additional assignments to downloads [matrixmethod package - `node.py`](./matrixmethod/node.md)
 - Added solutions workshop 2 and additional assignments to text and downloads [matrixmethod package - `elements.py`](./matrixmethod/elements.md)
