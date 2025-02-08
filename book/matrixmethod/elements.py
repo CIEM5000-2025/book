@@ -68,6 +68,11 @@ class Element:
 
         self.L = np.sqrt((self.nodes[1].x - self.nodes[0].x)**2.0 + (self.nodes[1].z - self.nodes[0].z)**2.0)
 
+        # Make sure both nodes have rotational DOFs (this is an Euler element)
+
+        assert len(node1.dofs) == 3
+        assert len(node2.dofs) == 3
+
         alpha = np.arctan2 #YOUR CODE HERE
 
         T = np.zeros((6, 6))
@@ -114,6 +119,7 @@ class Element:
         Returns:
             numpy.ndarray: Array containing the global degrees of freedom.
         """
+
         return np.hstack((self.nodes[0].dofs, self.nodes[1].dofs))
 
     def stiffness(self):

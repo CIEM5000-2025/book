@@ -33,25 +33,28 @@ class Node:
         Node.ndof = 0
         Node.nn = 0
         
-    def __init__ (self, x, z): 
+    def __init__ (self, x, z, has_rotation=True): 
         """
         The constructor for Node class.
 
         Parameters:
-            x (float):        The x-coordinate of the node.
-            z (float):        The z-coordinate of the node.
-            p (numpy.array):  The load vector of the node.
-            dofs (list):      The Degrees of Freedom (u (in direction of x), w (in direction of z), phi (from z to x)) associated with the node.
+            x (float):           The x-coordinate of the node.
+            z (float):           The z-coordinate of the node.
+            has_rotation (bool): Flag to indicate the node has a rotational DOF (phi)
         """
+        Node.nn   += 1
 
         self.x     = x
         self.z     = z
-        self.p     = np.zeros(3)
         
-        self.dofs  = [Node.ndof, Node.ndof+1, Node.ndof+2]
+        if has_rotation:
+            self.dofs  = [Node.ndof, Node.ndof+1, Node.ndof+2]
+            Node.ndof += 3
+        else:
+            self.dofs = [Node.ndof, Node.ndof+1]
+            Node.ndof += 2
 
-        Node.ndof += 3
-        Node.nn   += 1
+        self.p = np.zeros(len(self.dofs))
 
     def add_load (self, p):
         """
@@ -64,6 +67,8 @@ class Node:
             p (numpy.array): A vector containing the load in the x direction, the load in the y direction, 
                              and the moment. 
         """
+        assert len(p) == len(self.p)
+
         self.p += p
 
     def get_coords(self):
