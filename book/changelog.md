@@ -18,7 +18,7 @@ This changelog will include all changes, except for minor adjustments like typos
 - See full changelog [here](TBP)
 
 (v2025.1.0)=
-## v2025.1.0 After workshop 1
+## v2025.1.0, ..., after workshop 1
 - Added solutions workshop 1 to downloads [Activities - Workshop 1](./workshop1.md)
 - Added solutions workshop 1 to text and downloads [Activities - Workshop 1 - Apply](./workshop1/Workshop_1_Apply.ipynb)
 - Added solutions workshop 1 to text and downloads [Activities - Workshop 1 - Implement](./workshop1/Workshop_1_Implement.ipynb)
