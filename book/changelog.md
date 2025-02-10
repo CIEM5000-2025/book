@@ -3,7 +3,7 @@
 This changelog will include all changes, except for minor adjustments like typos.
 
 (v2025.2.0)=
-## v2025.2.0 After workshop 2
+## v2025.2.0, ..., after workshop 2
 - Added solutions workshop 2 to downloads [Activities - Workshop 2](./workshop2.md)
 - Added solutions workshop 2 to text and downloads [Activities - Workshop 2 - Apply](./workshop2/Workshop_2_Apply.ipynb)
 - Added solutions workshop 2 to text and downloads [Activities - Workshop 2 - Implement](./workshop2/Workshop_2_Implement.ipynb)
