@@ -1,5 +1,9 @@
 # How to use this TeachBook 📘
 
+::::::{versionadded} v2025.0.21 2025-02-11 10:42
+Added html export of book as zip
+::::::
+
 This TeachBook combines the course schedule and content. Announcement an grading results are provided via Brightspace.
 
 ## Interactive features
@@ -13,3 +17,6 @@ If you'd like to make this TeachBook more personal by adding (private or public)
 
 ## Version
 This is the `2024-2025`-version of the TeachBook. Updates during this course are communicated on the relevant pages and in [the changelog](./changelog.md). After each of the workshops, updates will follow containing the solutions to the practice exercises.
+
+## Offline book
+If you'd like to have an offline version of this book, you can download it by clicking [{fa}`book`](https://ciem5000-2025.github.io/book/_static/book.zip) on the top right corner. Note that some interactive features will not work (for example, the Python code). You can always download separate pages by clicking the {fa}`download` button on any page.
