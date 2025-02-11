@@ -11,7 +11,12 @@ This changelog will include all changes, except for minor adjustments like typos
 - Added solutions workshop 1 to downloads [ matrixmethod package - `node.py`](./matrixmethod/node.md)
 - Added solutions workshop 1 to text and downloads [matrixmethod package - `elements.py`](./matrixmethod/elements.md)
 - Added solutions workshop 1 to text and downloads [matrixmethod package - `constrainer.py`](./matrixmethod/constrainer.md)
-- Full changelog [here](TBP)
+- Full changelog [here](https://github.com/CIEM5000-2025/book/releases/tag/v2025.1.0)
+
+## v2025.0.2, 2025-02-11 10:42, after first lecture
+- Added html export of book as a zip to [](./course_information.md) and most other pages as additional download.
+- Fixed various typos
+- Full changelog [here](https://github.com/CIEM5000-2025/book/releases/tag/v2025.0.2)
 
 ## v2025.0.1, 2025-02-10 15:02, before first lecture
 - Updated [lecture slides lecture 1](./lecture1.md): moved slides on python packages and updated installation requirements first workshop
