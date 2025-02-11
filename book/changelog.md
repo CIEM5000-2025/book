@@ -15,7 +15,7 @@ This changelog will include all changes, except for minor adjustments like typos
 - Added solutions workshop 2 and additional assignments to downloads [matrixmethod package - `node.py`](./matrixmethod/node.md)
 - Added solutions workshop 2 and additional assignments to text and downloads [matrixmethod package - `elements.py`](./matrixmethod/elements.md)
 - Added solutions workshop 2 and additional assignments to text and downloads [matrixmethod package - `constrainer.py`](./matrixmethod/constrainer.md)
-- See full changelog [here](TBP)
+- See full changelog [here](https://github.com/CIEM5000-2025/book/releases/tag/v2025.2.0)
 
 (v2025.1.0)=
 ## v2025.1.0, ..., after workshop 1
