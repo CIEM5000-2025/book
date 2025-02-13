@@ -13,6 +13,10 @@ This changelog will include all changes, except for minor adjustments like typos
 - Added solutions workshop 1 to text and downloads [matrixmethod package - `constrainer.py`](./matrixmethod/constrainer.md)
 - Full changelog [here](https://github.com/CIEM5000-2025/book/releases/tag/v2025.1.0)
 
+## v2025.0.3, 2025-02-13 13:33, before workshop 1
+- Fixed typo in [Workshop 1 - Exercise 2.6](exercise2.6)
+- Full changelog [here](https://github.com/CIEM5000-2025/book/releases/tag/v2025.0.3)
+
 ## v2025.0.2, 2025-02-11 10:42, after first lecture
 - Added html export of book as a zip to [](./instructions.md) and most other pages as additional download.
 - Fixed various typos
