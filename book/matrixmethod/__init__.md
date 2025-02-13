@@ -28,6 +28,11 @@ This page shows a preview of the `matrixmethod` package. Please fork and clone t
 :replace_default: "False"
 ```
 
+```{custom_download_link} https://github.com/CIEM5000-2025/practice-assignments/tree/solution_workshop_1
+:text: "All files practice assignments with solutions workshop 1"
+:replace_default: "False"
+```
+
 ```{code-cell} ipython3
 from .node import *
 from .elements import *
