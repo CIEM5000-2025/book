@@ -21,6 +21,10 @@ This page shows a preview of the assignment. Please fork and clone the assignmen
 Solutions workshop 1 in text and downloads 
 ::::::
 
+::::::{versionchanged} v2025.0.3 2025-02-10 13:33, before workshop 1
+Fixed typo in [Exercise 2.6](exercise2.6)
+::::::
+
 In this notebook you will implement the matrix method and check it with some sanity checks.
 
 +++
@@ -397,7 +401,7 @@ print(elem.T)
 :label: exercise2.6
 :nonumber: true
 
-For the previous element, a global displacement vector $\mathbf{u}^{(e)} = \begin{bmatrix} 0 \\0 \\ 0 \\ \sqrt{3} \\ 1 \\ 0 \end{bmatrix}$ is given. What would be displacement vector $\mathbf{u}^{(e)}$?
+For the previous element, a global displacement vector $\mathbf{u}^{(e)} = \begin{bmatrix} 0 \\0 \\ 0 \\ \sqrt{3} \\ 1 \\ 0 \end{bmatrix}$ is given. What would be the local displacement vector $\bar{\mathbf{u}}^{(e)}$?
 
 Check your answer using pen and paper. Tip: make a drawing instead of doing all the algebra.
 ```
