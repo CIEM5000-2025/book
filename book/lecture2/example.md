@@ -30,9 +30,9 @@ he differential equation for the this element can be derived leading to:
 - Constitutive relation:$M_t=GI_t \ \theta$
 - Equilibrium relations: $\cfrac{\mrm{d}M_t}{\mrm{d}x}=-m$
 
-These relations can be combined into one fourth order differential equation:
+These relations can be combined into one second order differential equation:
 
-$$ GI_t\frac{\mrm{d}^4 \varphi_x}{\mrm{d}x^4}=-m $$
+$$ GI_t\frac{\mrm{d}^2 \varphi_x}{\mrm{d}x^2}=-m $$
 
 This looks identical (with $m$ for $q$, $GI_t$ for $EA$ and $\varphi$ for $u$) to our results from the [extension element](./element_loads.md), therefore, we can directly write down the stiffness matrix and (equivalent) force vector directly:
 
