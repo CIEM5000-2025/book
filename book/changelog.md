@@ -2,6 +2,10 @@
 
 This changelog will include all changes, except for minor adjustments like typos.
 
+## v2025.1.1, 2025-02-18 9:30 after second lecture
+- Fixed typo and removed example in [lecture slides lecture 2](./lecture2.md)
+- Fixed various typos
+
 (v2025.1.0)=
 ## v2025.1.0, 2025-02-13 17:30, after workshop 1
 - Added solutions workshop 1 to downloads [Activities - Workshop 1](./workshop1.md)
