@@ -5,6 +5,7 @@ This changelog will include all changes, except for minor adjustments like typos
 ## v2025.1.1, 2025-02-18 9:30 after second lecture
 - Fixed typo and removed example in [lecture slides lecture 2](./lecture2.md)
 - Fixed various typos
+- Full changelog [here](https://github.com/CIEM5000-2025/book/releases/tag/v2025.1.1)
 
 (v2025.1.0)=
 ## v2025.1.0, 2025-02-13 17:30, after workshop 1
@@ -15,7 +16,7 @@ This changelog will include all changes, except for minor adjustments like typos
 - Added solutions workshop 1 to downloads [ matrixmethod package - `node.py`](./matrixmethod/node.md)
 - Added solutions workshop 1 to text and downloads [matrixmethod package - `elements.py`](./matrixmethod/elements.md)
 - Added solutions workshop 1 to text and downloads [matrixmethod package - `constrainer.py`](./matrixmethod/constrainer.md)
-- Full changelog [here](https://github.com/CIEM5000-2025/book/releases/tag/v2025.1.0)
+- Full changelog [](https://github.com/CIEM5000-2025/book/releases/tag/v2025.1.0)
 
 ## v2025.0.3, 2025-02-13 13:33, before workshop 1
 - Fixed typo in [Workshop 1 - Exercise 2.6](exercise2.6)
