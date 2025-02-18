@@ -1,6 +1,6 @@
 # Lecture 2
 
-::::::{versionchanged} v2025.0.1 after second leture
+::::::{versionchanged} v2025.1.1 after second leture
 Updated lecture slides: fixed typo and removed example
 ::::::
 
