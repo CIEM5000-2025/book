@@ -81,9 +81,10 @@ class Constrainer:
         self.free_dofs = [i for i in range(len(f)) if i not in self.cons_dofs]
         
         Kff = k[np.ix_(self.free_dofs,self.free_dofs)]
+        Kfc = k[np.ix_(self.free_dofs,self.cons_dofs)]
         Ff = f[self.free_dofs]
 
-        return Kff, Ff
+        return Kff, Ff - np.matmul(Kfc,self.cons_vals)
 
     def support_reactions (self,k,u_free,f):       
         """

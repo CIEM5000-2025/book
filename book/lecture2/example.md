@@ -120,7 +120,7 @@ $$ \mathbf{K} =
       $$
 
 ### Element $(2)$
-The second element links the second and third nodal displacement with the second and thirds nodal forces:
+The second element links the second and third nodal displacement with the second and third nodal forces:
 
 $$\mathbf{K} = 
       \begin{bmatrix}
