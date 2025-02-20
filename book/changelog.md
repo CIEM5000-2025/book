@@ -2,6 +2,21 @@
 
 This changelog will include all changes, except for minor adjustments like typos.
 
+(v2025.2.0)=
+## v2025.2.0, 2025-02-20 17:30, after workshop 2
+- Added solutions workshop 2 to downloads [Activities - Workshop 2](./workshop2.md)
+- Added solutions workshop 2 to text and downloads [Activities - Workshop 2 - Apply](./workshop2/Workshop_2_Apply.ipynb)
+- Added solutions workshop 2 to text and downloads [Activities - Workshop 2 - Implement](./workshop2/Workshop_2_Implement.ipynb)
+- Added solutions additional assignments to downloads [Activities - Additional assignments](./additional.md)
+- Added solutions additional assignments to text and downloads [Activities - Additional assignments - Beam](./additional/beam.ipynb)
+- Added solutions additional assignments to text and downloads [Activities - Additional assignments - Kinked beam](./additional/beam_kinked.ipynb)
+- Added solutions additional assignments to text and downloads [Activities - Additional assignments - Frame](./additional/frame.ipynb)
+- Added solutions workshop 2 and additional assignments to downloads [matrixmethod package - `__init__.py`](./matrixmethod/__init__.md)
+- Added solutions workshop 2 and additional assignments to downloads [matrixmethod package - `node.py`](./matrixmethod/node.md)
+- Added solutions workshop 2 and additional assignments to text and downloads [matrixmethod package - `elements.py`](./matrixmethod/elements.md)
+- Added solutions workshop 2 and additional assignments to text and downloads [matrixmethod package - `constrainer.py`](./matrixmethod/constrainer.md)
+- See full changelog [here](https://github.com/CIEM5000-2025/book/releases/tag/v2025.2.0)
+
 ## v2025.1.1, 2025-02-18 9:30 after second lecture
 - Fixed typo and removed example in [lecture slides lecture 2](./lecture2.md)
 - Fixed various typos
