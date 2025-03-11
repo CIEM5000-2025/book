@@ -20,7 +20,7 @@ kernelspec:
 :replace_default: "False"
 ```
 
-In [](./single_element.md) and [](./matrix.md) you've seen how to derive the local stiffness matrix for a simple extension element. But can you do the same for other elements?
+In [](../single_element.md) and [](../matrix.md) you've seen how to derive the local stiffness matrix for a simple extension element. But can you do the same for other elements?
 
 
 ::::::{topic} Learning objective
@@ -33,7 +33,7 @@ $$\mathbf{K}^{(e)} = \cfrac{EA}{\ell}\begin{bmatrix} 1&-1\\-1&1 \end{bmatrix}$$
 
 The same procedure can be followed for other element, like a combined extension and Euler-Bernoulli element:
 
-```{figure} elemtypes.svg
+```{figure} ../elemtypes.svg
 :name: elemtypes
 :align: center
 

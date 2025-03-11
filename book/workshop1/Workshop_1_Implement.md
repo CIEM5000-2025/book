@@ -168,7 +168,7 @@ Here the class describes an element combining extension and Euler-Bernoulli bend
 
 However, the implementation is incomplete:
 - The transformation matrix is missing in `__init__`, which is given in [](../lecture1/transformations.md). Make sure you take into account that a positive $\Delta z$ with a positive $\Delta x$ gives a negative angle $\alpha$. Make use of `numpy.arctan2` to return the angle between $-\pi$ and $\pi$, `numpy.arctan` returns an angle between $-\cfrac{\pi}{2}$ and $-\cfrac{\pi}{2}$, and therefore cannot distinguish between all four quadrants.
-- The correct stiffness matrix for this extension-bending element coordinate system is missing in `stiffness`. You can derive the stiffness matrix yourself using pen and paper, SymPy or Maple, or copy the given stiffness matrix from [](../lecture1/other_elements.ipynb).
+- The correct stiffness matrix for this extension-bending element coordinate system is missing in `stiffness`. You can derive the stiffness matrix yourself using pen and paper, SymPy or Maple, or copy the given stiffness matrix from [](../lecture1/notebooks/other_elements.ipynb).
 - We keep the functions which add a distributed load and compute the moments / displacements untouched for this week. Next week we'll implement those as well.
 
 

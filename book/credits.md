@@ -17,4 +17,4 @@ This book is created using open source tools: it is a JupyterBook that is writte
 
 (external_resources)=
 ## External resources
-Parts of this book are taken from other external resources and reused in various ways. If an author is not listed on a particular page, it is by the Authors. Page [](./lecture2/fem.ipynb) includes code from {cite:t}`MUDE`. Original content is licensed under CC BY. 
+Parts of this book are taken from other external resources and reused in various ways. If an author is not listed on a particular page, it is by the Authors. Page [](./lecture2/notebooks/fem.ipynb) includes code from {cite:t}`MUDE`. Original content is licensed under CC BY. 

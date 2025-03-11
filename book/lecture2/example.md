@@ -56,7 +56,7 @@ $$
 
 ## Reduce bending element for tractability
 
-Element $(1)$ and $(2)$ will bend in this case. However, no forces act in the local $x$-direction. This allows us to reduce the element defined in [](../lecture1/other_elements.ipynb):
+Element $(1)$ and $(2)$ will bend in this case. However, no forces act in the local $x$-direction. This allows us to reduce the element defined in [](../lecture1/notebooks/other_elements.ipynb):
 
 $$
 	\mathbf{K}^{(e)}_\text{bending} = \begin{bmatrix}
