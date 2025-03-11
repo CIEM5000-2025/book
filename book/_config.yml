@@ -39,6 +39,11 @@ sphinx:
           "mrm": "\\mathrm"
           "mymat[1]": "\\left[ \\begin{matrix} #1 \\end{matrix} \\right]"
     named_colors_custom_colors: {'cA':[1,113,136],'cB':[195,49,47],'cE':[0,163,144],'cI':[235,114,70]}
+    bibtex_default_style: myapastyle
+    bibtex_reference_style: author_year_round
+  local_extensions:
+    apastyle: _ext/
+    bracket_citation_style: _ext/
           
   extra_extensions:
     - sphinx.ext.imgconverter
