@@ -15,7 +15,7 @@ kernelspec:
 
 # Local stiffness matrix Euler-Bernoulli element
 
-```{custom_download_link} other_elements.md
+```{custom_download_link} ../docs/other_elements.md
 :text: ".md:myst"
 :replace_default: "False"
 ```

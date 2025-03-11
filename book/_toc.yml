@@ -21,7 +21,7 @@ parts:
       - file: lecture1/matrix.md
       - file: lecture1/directly.md
       - file: lecture1/matrix_python.md
-      - file: lecture1/other_elements.ipynb
+      - file: lecture1/notebooks/other_elements.ipynb
       - file: lecture1/transformations.md
     - file: workshop1.md
       sections:
@@ -31,8 +31,8 @@ parts:
       sections:
       - file: lecture2/element_loads.md
       - file: lecture2/direchlet.md
-      - file: lecture2/postprocessing.ipynb
-      - file: lecture2/fem.ipynb
+      - file: lecture2/notebooks/postprocessing.ipynb
+      - file: lecture2/notebooks/fem.ipynb
       - file: lecture2/example.md
     - file: workshop2.md
       sections:

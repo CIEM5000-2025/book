@@ -49,9 +49,9 @@ Finally, the matrix method has limitations. It turns out to be impossible to glu
 
 ## Example with finite element method
 
-Let's consider the examples from [](../lecture1/displacement.md):
+Let's consider the examples from [](../../lecture1/displacement.md):
 
-```{figure} ../lecture1/extension2fieldsdisp.svg
+```{figure} ../../lecture1/extension2fieldsdisp.svg
 :name: extension2fieldsq2
 :align: center
 
