@@ -11,9 +11,11 @@ kernelspec:
   name: python3
 ---
 
-# Finite element method vs. Matrix Method
-
+```{margin}
 > This page reuses <license> content from {cite:t}`MUDE`. {fa}`quote-left`{ref}`Find out more here.<external_resources>`
+```
+
+# Finite element method vs. Matrix Method
 
 You've seen the finite element method before, which could be used to solve similar problems. But what are the differences?
 

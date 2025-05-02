@@ -11,8 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Frame
-
+```{margin}
 ::::::{attention}
 This page shows a preview of the assignment. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2025/practice-assignments)
 ::::::
@@ -20,6 +19,9 @@ This page shows a preview of the assignment. Please fork and clone the assignmen
 ::::::{versionadded} v2025.2.0 After workshop 2
 Solutions additional assignments  in text and downloads 
 ::::::
+```
+
+# Frame
 
 ```{custom_download_link} ./frame_stripped.ipynb
 :text: ".ipynb"

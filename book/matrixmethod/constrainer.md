@@ -11,8 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# `constrainer.py`
-
+```{margin}
 ::::::{versionadded} v2025.2.0 After workshop 2
 Solutions workshop 2 and additional assignments in text and downloads 
 ::::::
@@ -26,6 +25,9 @@ This page shows a preview of the `matrixmethod` package. Please fork and clone t
 
 After each workshop, the solution will be added to this preview and to the [GitHub-repository](https://github.com/CIEM5000-2025/practice-assignments)
 ::::::
+```
+
+# `constrainer.py`
 
 ```{custom_download_link} constrainer.py
 :text: ".py"
