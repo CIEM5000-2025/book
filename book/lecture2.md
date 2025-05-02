@@ -1,7 +1,9 @@
 ```{margin}
+
 ::::::{versionchanged} v2025.1.1 after second leture
 Updated lecture slides: fixed typo and removed example
 ::::::
+
 ```
 
 # Lecture 2

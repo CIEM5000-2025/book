@@ -1,7 +1,9 @@
 ```{margin}
+
 ::::::{versionchanged} v2025.0.1 before first lecture
 Updated lecture slides: moved slides on python packages and updated installation requirements first workshop
 ::::::
+
 ```
 
 # Lecture 1

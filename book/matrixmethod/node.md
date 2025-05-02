@@ -12,9 +12,11 @@ kernelspec:
 ---
 
 ```{margin}
+
 ::::::{attention}
 This page shows a preview of the `matrixmethod` package. Please fork and clone the practice assignments to work on it locally from [GitHub](https://github.com/CIEM5000-2025/practice-assignments)
 ::::::
+
 ```
 
 # `node.py`

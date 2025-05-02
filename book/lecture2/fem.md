@@ -12,7 +12,9 @@ kernelspec:
 ---
 
 ```{margin}
+
 > This page reuses <license> content from {cite:t}`MUDE`. {fa}`quote-left`{ref}`Find out more here.<external_resources>`
+
 ```
 
 # Finite element method vs. Matrix Method

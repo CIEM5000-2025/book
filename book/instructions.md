@@ -1,7 +1,9 @@
 ```{margin}
+
 ::::::{versionadded} v2025.0.2 2025-02-11 10:42
 Added html export of book as zip
 ::::::
+
 ```
 
 # How to use this TeachBook 📘
