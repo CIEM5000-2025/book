@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Implementation
+```{margin}
 
 ::::::{attention}
 This page shows a preview of the assignment. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2025/practice-assignments)
@@ -24,6 +24,10 @@ Solutions workshop 1 in text and downloads
 ::::::{versionchanged} v2025.0.3 2025-02-10 13:33, before workshop 1
 Fixed typo in [Exercise 2.6](exercise2.6)
 ::::::
+
+```
+
+# Implementation
 
 In this notebook you will implement the matrix method and check it with some sanity checks.
 

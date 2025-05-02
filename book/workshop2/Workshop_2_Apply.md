@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-# Apply
+```{margin}
 
 ::::::{attention}
 This page shows a preview of the assignment. Please fork and clone the assignment to work on it locally from [GitHub](https://github.com/CIEM5000-2025/practice-assignments)
@@ -20,6 +20,10 @@ This page shows a preview of the assignment. Please fork and clone the assignmen
 ::::::{versionadded} v2025.2.0 After workshop 2
 Solutions workshop 2 in text and downloads 
 ::::::
+
+```
+
+# Apply
 
 In this notebook you will solve a 2-element frame at the end of the notebook.
 

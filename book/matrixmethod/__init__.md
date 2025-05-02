@@ -11,11 +11,15 @@ kernelspec:
   name: python3
 ---
 
-# `__init__.py`
+```{margin}
 
 ::::::{attention}
 This page shows a preview of the `matrixmethod` package. Please fork and clone the practice assignments to work on it locally from [GitHub](https://github.com/CIEM5000-2025/practice-assignments)
 ::::::
+
+```
+
+# `__init__.py`
 
 
 ```{custom_download_link} __init__.py
