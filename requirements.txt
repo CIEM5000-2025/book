@@ -1,6 +1,6 @@
 # first list the packages you wish to download from PyPI
 teachbooks == 0.1.0 # depends on jupyter-book
-git+https://github.com/TeachBooks/JupyterBook-Patches.git@margin_fix #BUMP
+git+https://github.com/TeachBooks/JupyterBook-Patches.git@margin_fix #BUMP BUMP
 sphinx-image-inverter == 1.1.2
 download_link_replacer == 1.0.4
 sphinx-tudelft-theme == 1.1.5
